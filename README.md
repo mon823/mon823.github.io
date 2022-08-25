@@ -1,3 +1,3 @@
 # life-vending-machine blog
 
-## 개발중
+## 개발중 
