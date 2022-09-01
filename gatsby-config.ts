@@ -14,12 +14,12 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
-          '@/*': 'src/*',
-          '@components/*': 'src/components/*',
-          '@styles/*': 'src/styles/*',
-          '@utils/*': 'src/utils/*',
-          '@layouts/*': 'src/layouts/*',
-          '@pages/*': 'src/pages/*',
+          '@': 'src',
+          '@components': 'src/components',
+          '@styles': 'src/styles',
+          '@utils': 'src/utils',
+          '@layouts': 'src/layouts',
+          '@pages': 'src/pages',
         },
       },
     },
