@@ -23,6 +23,10 @@ const config: GatsbyConfig = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {},
+    },
   ],
 }
 
