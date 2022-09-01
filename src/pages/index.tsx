@@ -1,17 +1,13 @@
 import * as React from 'react'
 import type { HeadFC } from 'gatsby'
-
-const pageStyles = {
-  color: '#232129',
-  padding: 96,
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-}
+import { GlobalStyle } from '@styles/GlobalStyle'
 
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
+    <>
+      <GlobalStyle />
       <h1>Main Pages</h1>
-    </main>
+    </>
   )
 }
 
