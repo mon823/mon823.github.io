@@ -1,5 +1,5 @@
-import { css, createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
+import { css, createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 export const resetCss = css`
   /* prettier-ignore */
@@ -94,8 +94,8 @@ export const resetCss = css`
     cursor: pointer;
     font-weight: 500;
   }
-`
+`;
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-`
+`;

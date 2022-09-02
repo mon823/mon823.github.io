@@ -1,6 +1,6 @@
-import * as React from 'react'
-import type { HeadFC } from 'gatsby'
-import { GlobalStyle } from '@styles/GlobalStyle'
+import * as React from 'react';
+import type { HeadFC } from 'gatsby';
+import { GlobalStyle } from '@styles/GlobalStyle';
 
 const IndexPage = () => {
   return (
@@ -8,9 +8,13 @@ const IndexPage = () => {
       <GlobalStyle />
       <h1>Main Pages</h1>
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => (
+  <>
+    <title>life-vending-machine</title>
+  </>
+);
