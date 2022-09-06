@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { HeadFC } from 'gatsby';
 import { GlobalStyle } from '@styles/GlobalStyle';
+import '@styles/typography.css';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@styles/theme';
 

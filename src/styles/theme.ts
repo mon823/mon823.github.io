@@ -1,5 +1,8 @@
 const colorsLight = {
+  white_max: '#FFFFFF',
+  white: '#F8F9FA',
   grayBrown: '#5C4D43',
+  dark: '#212529',
 } as const;
 
 const colorDark = {
@@ -7,7 +10,8 @@ const colorDark = {
 } as const;
 
 const fontSize = {
-  xl: '32px',
+  xxl: '36px',
+  xl: '24px',
   lg: '20px',
   md: '16px',
   sm: '14px',
@@ -18,7 +22,8 @@ const fontWeight = {
   thins: 200,
   light: 300,
   regular: 500,
-  bold: 700,
+  semiBold: 600,
+  bold: 'bold',
 } as const;
 
 export type ColorLight = typeof colorsLight;
