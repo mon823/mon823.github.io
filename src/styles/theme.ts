@@ -1,12 +1,20 @@
-const colorsLight = {
-  white_max: '#FFFFFF',
-  white: '#F8F9FA',
-  grayBrown: '#5C4D43',
-  dark: '#212529',
+// color1: '#16151b', // 가장 어두운색
+// color2: '#474748',
+// color3: '#9fa7b1',
+// color4: '#d2d4d9',
+// color5: '#f8f8f8', // 가장 밝은색
+export const colorLight = {
+  bgColor: '#f8f8f8',
+  textColor: '#16151b',
+  lineColor: '#d2d4d9',
+  commonColor: '#9fa7b1',
 } as const;
 
-const colorDark = {
-  test: '#5C4D43',
+export const colorDark = {
+  bgColor: '#16151b',
+  textColor: '#f8f8f8',
+  lineColor: '#474748',
+  commonColor: '#9fa7b1',
 } as const;
 
 const fontSize = {
@@ -26,14 +34,19 @@ const fontWeight = {
   bold: 'bold',
 } as const;
 
-export type ColorLight = typeof colorsLight;
+export type ColorLight = typeof colorLight;
 export type Colordark = typeof colorDark;
 export type FontSize = typeof fontSize;
 export type FontWeight = typeof fontWeight;
 
-export const theme = {
-  colorLight: colorsLight,
-  colorDark: colorDark,
+export interface Itheme {
+  color: ColorLight | Colordark;
+  fontSize: FontSize;
+  fontWeight: FontWeight;
+}
+
+export const theme: Itheme = {
+  color: colorLight,
   fontSize: fontSize,
   fontWeight: fontWeight,
 };
