@@ -104,6 +104,7 @@
       "@utils/*": ["src/utils/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
+      "@images/*": ["src/images/*"],
       "@hooks/*": ["src/hooks/*"]
     }
   },
