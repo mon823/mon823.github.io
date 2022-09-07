@@ -98,4 +98,10 @@ export const resetCss = css`
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
+  body {
+    background-color: ${({ theme }) => theme.color.bgColor};
+    color : ${({ theme }) => theme.color.textColor};
+    width: 100vw;
+    height: 100vh;
+  }
 `;
