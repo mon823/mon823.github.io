@@ -3,8 +3,7 @@ import { ColorLight, Colordark, FontSize, FontWeight } from '@styles/theme';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colorLight: ColorLight;
-    colorDark: Colordark;
+    color: ColorLight | Colordark;
     fontSize: FontSize;
     fontWeight: FontWeight;
   }

@@ -20,6 +20,7 @@ const config: GatsbyConfig = {
           '@utils': 'src/utils',
           '@layouts': 'src/layouts',
           '@pages': 'src/pages',
+          '@hooks': 'src/hooks',
         },
       },
     },

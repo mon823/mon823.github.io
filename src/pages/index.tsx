@@ -1,19 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import type { HeadFC } from 'gatsby';
-import { GlobalStyle } from '@styles/GlobalStyle';
 import '@styles/typography.css';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '@styles/theme';
+import { GlobalStyle } from '@styles/GlobalStyle';
+import { ThemeProvider } from '@hooks/useDarkMode';
 
 const IndexPage = () => {
   return (
-    <>
+    <ThemeProvider>
       <GlobalStyle />
-      <h1>Main Pages</h1>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-      </ThemeProvider>
-    </>
+    </ThemeProvider>
   );
 };
 
