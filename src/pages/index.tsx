@@ -1,16 +1,15 @@
 import React from 'react';
 import type { HeadFC } from 'gatsby';
 import '@styles/typography.css';
-import { GlobalStyle } from '@styles/GlobalStyle';
-import { DarkMode } from '@components/DarkModeBtn/DarkModeBtn';
-import { ThemeProvider } from '@hooks/useDarkMode';
+import Layout from '@layouts/MainPageLayout';
+import { RouteComponentProps } from '@reach/router';
 
-const IndexPage = () => {
+const IndexPage = (props: RouteComponentProps) => {
   return (
-    <ThemeProvider>
-      <GlobalStyle />
-      <DarkMode />
-    </ThemeProvider>
+    <>
+      <Layout>
+      </Layout>
+    </>
   );
 };
 
