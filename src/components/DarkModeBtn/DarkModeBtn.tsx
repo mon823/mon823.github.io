@@ -12,9 +12,9 @@ const btnSize = {
 
 const Wrapper = styled.div`
   position: fixed;
-  bottom: calc(${btnSize.borderSize} + ${btnSize.bottomMargin});
   z-index: 1000;
   width: 100%;
+  bottom: calc(${btnSize.borderSize} + ${btnSize.bottomMargin});
 `;
 
 const DarkModeBtn = styled.a`
@@ -29,9 +29,10 @@ const DarkModeBtn = styled.a`
   height: ${btnSize.borderSize};
   right: ${btnSize.rightMargin};
 `;
+
 const DarkModeIcon = styled.img<{ isDark: boolean }>`
-  width: ${btnSize.imgSize};
   object-fit: contain;
+  width: ${btnSize.imgSize};
   filter: ${props => (props.isDark ? 'invert(99%) sepia(15%) saturate(64%) hue-rotate(282deg) brightness(116%) contrast(95%)' : 'none')};
 `;
 
