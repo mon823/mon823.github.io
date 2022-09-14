@@ -14,14 +14,6 @@ const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.xxl};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
-const GoHome = styled(Link)`
-  all: unset;
-  color: ${({ theme }) => theme.color.textColor};
-  font-size: ${({ theme }) => theme.fontSize.lg};
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
-  text-decoration: underline;
-  cursor: pointer;
-`;
 
 const GoBack = styled.p`
   all: unset;
@@ -42,9 +34,6 @@ const NotFoundPage = (props: RouteComponentProps) => {
         Sorry 😔, we couldn’t find what you were looking for.
         <br />
         <br />
-        <GoHome to="/" replace>
-          Go Home
-        </GoHome>
         &nbsp;&nbsp;
         <GoBack onClick={() => history.back()}>Go Back</GoBack>.
       </p>

@@ -12,7 +12,7 @@ export const colorLight = {
 
 export const colorDark = {
   bgColor: '#16151b',
-  textColor: '#f8f8f8',
+  textColor: '#faffe6',
   lineColor: '#474748',
   commonColor: '#9fa7b1',
 } as const;

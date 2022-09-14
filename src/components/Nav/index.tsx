@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { RouteComponentProps } from '@reach/router';
 
 const Wrapper = styled.nav`
-  padding: 30px 15%;
+  max-width: 1080px;
+  padding: 30px 0%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   font-family: 'SourceHanSerif';
   font-size: ${({ theme }) => theme.fontSize.lg};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1180px) {
     padding: 30px 5%;
   }
 `;
@@ -36,7 +38,7 @@ const NavMenu = styled.button`
   padding: 0px 10px;
 `;
 
-const Nav = (props: RouteComponentProps) => {
+const Nav = () => {
   return (
     <>
       <Wrapper>
