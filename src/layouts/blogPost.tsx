@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './MainPageLayout';
+import Layout from './MainLayout';
 import { graphql } from 'gatsby';
 import { PostHeader } from '@/components/PostHeader';
 import { PostMain } from '@/components/PostMain';

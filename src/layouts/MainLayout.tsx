@@ -1,8 +1,20 @@
 import React, { ReactNode } from 'react';
+import styled from 'styled-components';
 import { GlobalStyle } from '@/styles/GlobalStyle';
 import { ThemeProvider } from '@/hooks/useDarkMode';
 import { DarkMode } from '@/components/DarkModeBtn';
 import { Nav } from '@/components/Nav';
+
+const Wrapper = styled.div`
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: 'SourceHanSans';
+  @media screen and (max-width: 1180px) {
+    padding: 30px 5%;
+  }
+`;
 
 interface Ichildren {
   children?: ReactNode;
@@ -13,8 +25,10 @@ const Layout = ({ children }: Ichildren) => {
     <ThemeProvider>
       <GlobalStyle />
       <DarkMode />
-      <Nav />
-      {children}
+      <Wrapper>
+        <Nav />
+        {children}
+      </Wrapper>
     </ThemeProvider>
   );
 };

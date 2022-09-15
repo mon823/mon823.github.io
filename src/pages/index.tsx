@@ -1,7 +1,7 @@
 import React from 'react';
 import type { HeadFC } from 'gatsby';
 import '@styles/typography.css';
-import Layout from '@layouts/MainPageLayout';
+import Layout from '@layouts/MainLayout';
 import { RouteComponentProps } from '@reach/router';
 
 const IndexPage = (props: RouteComponentProps) => {

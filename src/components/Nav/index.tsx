@@ -3,17 +3,11 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const Wrapper = styled.nav`
-  max-width: 1080px;
   padding: 30px 0%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   font-family: 'SourceHanSerif';
   font-size: ${({ theme }) => theme.fontSize.lg};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  @media screen and (max-width: 1180px) {
-    padding: 30px 5%;
-  }
 `;
 
 const Icon = styled(Link)`
