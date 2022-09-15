@@ -7,6 +7,7 @@ import { Nav } from '@/components/Nav';
 
 const Wrapper = styled.div`
   max-width: 1080px;
+  padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
 

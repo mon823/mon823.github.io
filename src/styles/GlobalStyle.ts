@@ -54,10 +54,6 @@ export const resetCss = css`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
-  ol,
-  ul {
-    list-style: none;
-  }
   blockquote,
   q {
     quotes: none;
@@ -97,7 +93,7 @@ export const resetCss = css`
 `;
 
 export const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${resetCss}
   body {
     background-color: ${({ theme }) => theme.color.bgColor};
     color : ${({ theme }) => theme.color.textColor};
