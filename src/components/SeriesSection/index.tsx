@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { useGetSeries } from '@/hooks/useGetSeries';
 
 const Wrapper = styled.div`
-  margin: 30px 5px;
+  margin: 30px 0px;
   background-color: ${({ theme }) => theme.color.boxColor};
+  border-radius: 10px;
   padding: 20px;
 `;
 
@@ -19,6 +20,9 @@ const SeriesHeaderCount = styled.a`
 `;
 
 const SeriesBox = styled.div`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   padding-top: 10px;
   font-size: ${({ theme }) => theme.fontSize.sm};
 `;
@@ -41,7 +45,7 @@ export const SeriesSection = ({ series, title }: { series: string; title: string
     <>
       <Wrapper>
         <SeriesHeader>
-          SERIES: {series} <SeriesHeaderCount>({series.length})</SeriesHeaderCount>
+          SERIES: {series} <SeriesHeaderCount>({data.length})</SeriesHeaderCount>
         </SeriesHeader>
         <br />
         <br />
