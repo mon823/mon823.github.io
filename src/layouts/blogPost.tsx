@@ -4,29 +4,18 @@ import { graphql } from 'gatsby';
 import { PostHeader } from '@/components/PostHeader';
 import { PostMain } from '@/components/PostMain';
 import { SeriesSection } from '@/components/SeriesSection';
+import { PostTailBtn } from '@/components/PostTailBtn';
+import type { IpostData } from '@/types/dataType';
 
-interface Iprops {
-  data: {
-    markdownRemark: {
-      frontmatter: {
-        title: string;
-        date: string;
-        slug: string;
-        series: string | null;
-        category: string;
-      };
-      html: string;
-    };
-  };
-}
-
-const Template = (props: Iprops) => {
+const Template = (props: IpostData) => {
   const post = props.data.markdownRemark;
+  const pageContext = props.pageContext;
   return (
     <Layout>
       <PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} />
       {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} /> : <></>}
       <PostMain html={post.html} />
+      <PostTailBtn pageContext={pageContext} />
     </Layout>
   );
 };
