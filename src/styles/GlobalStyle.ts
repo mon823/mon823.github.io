@@ -1,5 +1,5 @@
 import { css, createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+// import reset from 'styled-reset';
 
 export const resetCss = css`
   /* prettier-ignore */
