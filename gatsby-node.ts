@@ -1,33 +1,39 @@
-import type { GatsbyNode } from 'gatsby';
+import type { GatsbyNode, Actions } from 'gatsby';
+import type { IallMarkdownData } from '@/types/dataType';
 import path from 'path';
-
-interface Iresult {
-  errors?: any;
-  data?: {
-    allMarkdownRemark: {
-      edges: {
-        node: {
-          frontmatter: {
-            title: string;
-            date: string;
-            slug: string;
-            series: string | null;
-            category: string;
-          };
-        };
-      }[];
-    };
-  };
-}
 
 export const onPostBuild: GatsbyNode['onPostBuild'] = ({ reporter }) => {
   reporter.info('Blog has been built!');
 };
 
-export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql }) => {
+// const createPostPages = ({ actions, result }: { actions: Actions; result: Iresult }) => {
+//   const { createPage } = actions;
+// };
+
+const createBlogPages = ({ actions, result }: { actions: Actions; result: IallMarkdownData }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve('src/layouts/blogPost.tsx');
-  const result: Iresult = await graphql(`
+  if (result.data) {
+    result.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
+      createPage({
+        path: `/post${node.frontmatter.slug}`,
+        component: blogPostTemplate,
+        context: {
+          title: node.frontmatter.title,
+          date: node.frontmatter.date,
+          slug: node.frontmatter.slug,
+          series: node.frontmatter.series,
+          category: node.frontmatter.category,
+          next: next,
+          previous: previous,
+        },
+      });
+    });
+  }
+};
+
+export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql }) => {
+  const result: IallMarkdownData = await graphql(`
     {
       allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
         edges {
@@ -40,6 +46,18 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql 
               category
             }
           }
+          next {
+            frontmatter {
+              slug
+              title
+            }
+          }
+          previous {
+            frontmatter {
+              slug
+              title
+            }
+          }
         }
       }
     }
@@ -47,20 +65,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql 
   if (result.errors) {
     return Promise.reject(result.errors);
   } else {
-    if (result.data) {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: `/post${node.frontmatter.slug}`,
-          component: blogPostTemplate,
-          context: {
-            title: node.frontmatter.title,
-            date: node.frontmatter.date,
-            slug: node.frontmatter.slug,
-            series: node.frontmatter.series,
-            category: node.frontmatter.category,
-          },
-        });
-      });
-    }
+    createBlogPages({ actions, result });
   }
 };
