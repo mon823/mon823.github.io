@@ -3,6 +3,7 @@ import Layout from './MainLayout';
 import { graphql } from 'gatsby';
 import { PostHeader } from '@/components/PostHeader';
 import { PostMain } from '@/components/PostMain';
+import { SeriesSection } from '@/components/SeriesSection';
 
 interface Iprops {
   data: {
@@ -24,6 +25,7 @@ const Template = (props: Iprops) => {
   return (
     <Layout>
       <PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} />
+      {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} /> : <></>}
       <PostMain html={post.html} />
     </Layout>
   );
