@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const Wrapper = styled.nav`
-  padding: 30px 0%;
+  padding-bottom: 20px;
   display: flex;
   font-family: 'SourceHanSerif';
   font-size: ${({ theme }) => theme.fontSize.lg};
