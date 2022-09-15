@@ -22,6 +22,7 @@ const config: GatsbyConfig = {
           '@pages': 'src/pages',
           '@hooks': 'src/hooks',
           '@images': 'src/images',
+          '@types': 'src/types',
         },
       },
     },
