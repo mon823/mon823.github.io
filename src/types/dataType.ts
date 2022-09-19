@@ -40,6 +40,7 @@ export interface IpostData {
         category: string;
       };
       html: string;
+      tableOfContents: string;
     };
   };
   pageContext: {

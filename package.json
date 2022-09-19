@@ -36,6 +36,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-styled-components": "^5.22.0",
+    "gatsby-remark-autolink-headers": "^5.23.0",
     "gatsby-source-filesystem": "^4.23.0",
     "gatsby-transformer-remark": "^5.23.0",
     "prettier": "^2.7.1",
