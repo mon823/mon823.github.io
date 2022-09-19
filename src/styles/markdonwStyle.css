@@ -44,8 +44,13 @@
 
 .markdown-body a {
   background-color: transparent;
-  color: #0969da;
-  text-decoration: none;
+  color: #9e9e9e;
+  text-decoration: underline;
+}
+
+.markdown-body a:link {
+  color: #9e9e9e;
+  text-decoration: underline;
 }
 
 .markdown-body a:active,
