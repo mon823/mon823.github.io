@@ -35,7 +35,7 @@ const createBlogPages = ({ actions, result }: { actions: Actions; result: IallMa
 export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql }) => {
   const result: IallMarkdownData = await graphql(`
     {
-      allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             frontmatter {

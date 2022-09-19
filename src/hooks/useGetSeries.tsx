@@ -9,6 +9,7 @@ interface Idata {
           slug: string;
           series: string | null;
         };
+        id: string;
       };
     }[];
   };
@@ -25,6 +26,7 @@ export const useGetSeries = (series: string) => {
               series
               slug
             }
+            id
           }
         }
       }

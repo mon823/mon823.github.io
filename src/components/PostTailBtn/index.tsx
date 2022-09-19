@@ -22,7 +22,10 @@ const TailBtn = styled(Link)`
   white-space: nowrap;
   text-overflow: ellipsis;
   &:hover {
-    text-decoration: underline;
+    border-color: ${({ theme }) => theme.color.commonColor};
+    .title {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -31,12 +34,12 @@ const TailBtnNone = styled.div`
   border-color: ${({ theme }) => theme.color.boxColor};
 `;
 
-const TailBtnDes = styled.a`
+const TailBtnDes = styled.span`
   font-size: ${({ theme }) => theme.fontSize.sm};
   color: ${({ theme }) => theme.color.commonColor};
 `;
 
-const TailBtnTitle = styled.a`
+const TailBtnTitle = styled.span`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
@@ -46,7 +49,7 @@ const checkNullBox = ({ title, slug, state }: { title: string; slug: string; sta
       {slug != '' ? (
         <TailBtn to={'/post' + slug}>
           <TailBtnDes>{state}</TailBtnDes> <br />
-          <br /> <TailBtnTitle>{title}</TailBtnTitle>
+          <br /> <TailBtnTitle className="title">{title}</TailBtnTitle>
         </TailBtn>
       ) : (
         <TailBtnNone>

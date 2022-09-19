@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   padding: 20px;
 `;
 
-const SeriesHeader = styled.a`
+const SeriesHeader = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${({ theme }) => theme.fontSize.lg};
 `;
@@ -53,7 +53,7 @@ export const SeriesSection = ({ series, title }: { series: string; title: string
           const slug = '/post';
           if (title == node.frontmatter.title) {
             return (
-              <SeriesBox>
+              <SeriesBox key={node.id}>
                 <Current>
                   {index + 1}. {node.frontmatter.title} {'<<'}
                 </Current>
@@ -61,7 +61,7 @@ export const SeriesSection = ({ series, title }: { series: string; title: string
             );
           } else {
             return (
-              <SeriesBox>
+              <SeriesBox key={node.id}>
                 <Series to={slug + node.frontmatter.slug}>
                   {index + 1}. {node.frontmatter.title}
                 </Series>
