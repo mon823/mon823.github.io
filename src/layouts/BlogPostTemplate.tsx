@@ -1,11 +1,12 @@
 import React from 'react';
-import Layout from './MainLayout';
+import Layout from '@/layouts/MainLayout';
 import { graphql } from 'gatsby';
 import { PostHeader } from '@/components/PostHeader';
 import { PostMain } from '@/components/PostMain';
 import { SeriesSection } from '@/components/SeriesSection';
 import { PostTailBtn } from '@/components/PostTailBtn';
 import { PostToc } from '@/components/PostToc';
+
 import type { IpostData } from '@/types/dataType';
 
 const Template = (props: IpostData) => {
@@ -13,8 +14,8 @@ const Template = (props: IpostData) => {
   const pageContext = props.pageContext;
   return (
     <Layout>
-      <PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} />
-      {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} /> : <></>}
+      <PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} tag={post.frontmatter.tag} />
+      {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} slug={post.frontmatter.slug} /> : <></>}
       <PostMain html={post.html} />
       <PostTailBtn pageContext={pageContext} />
       <PostToc html={post.tableOfContents} />
@@ -33,6 +34,7 @@ export const pageQuery = graphql`
         slug
         series
         category
+        tag
       }
     }
   }

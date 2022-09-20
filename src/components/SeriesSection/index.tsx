@@ -10,12 +10,12 @@ const Wrapper = styled.div`
   padding: 20px;
 `;
 
-const SeriesHeader = styled.div`
+const SeriesHeader = styled(Link)`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: ${({ theme }) => theme.fontSize.lg};
 `;
 
-const SeriesHeaderCount = styled.a`
+const SeriesHeaderCount = styled.span`
   color: ${({ theme }) => theme.color.commonColor};
 `;
 
@@ -39,12 +39,13 @@ const Series = styled(Link)`
   }
 `;
 
-export const SeriesSection = ({ series, title }: { series: string; title: string }) => {
+export const SeriesSection = ({ series, title, slug }: { series: string; title: string; slug: string }) => {
   const data = useGetSeries(series);
+  const seriesSlug = slug.split('/')[1];
   return (
     <>
       <Wrapper>
-        <SeriesHeader>
+        <SeriesHeader to={'/post/' + seriesSlug}>
           SERIES: {series} <SeriesHeaderCount>({data.length})</SeriesHeaderCount>
         </SeriesHeader>
         <br />
