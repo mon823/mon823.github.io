@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Link, HeadFC } from 'gatsby';
+import { HeadFC } from 'gatsby';
 import { RouteComponentProps } from '@reach/router';
+import { ThemeProvider } from '@/hooks/useDarkMode';
 import styled from 'styled-components';
 
 const PageStyles = styled.main`
@@ -26,18 +27,20 @@ const GoBack = styled.p`
 
 const NotFoundPage = (props: RouteComponentProps) => {
   return (
-    <PageStyles>
-      <Title>Page not found</Title>
-      <br />
-      <br />
-      <p>
-        Sorry 😔, we couldn’t find what you were looking for.
+    <ThemeProvider>
+      <PageStyles>
+        <Title>Page not found</Title>
         <br />
         <br />
-        &nbsp;&nbsp;
-        <GoBack onClick={() => history.back()}>Go Back</GoBack>.
-      </p>
-    </PageStyles>
+        <p>
+          Sorry 😔, we couldn’t find what you were looking for.
+          <br />
+          <br />
+          &nbsp;&nbsp;
+          <GoBack onClick={() => history.back()}>Go Back</GoBack>.
+        </p>
+      </PageStyles>
+    </ThemeProvider>
   );
 };
 

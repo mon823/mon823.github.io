@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { ThemeProvider as StyleProvider } from 'styled-components';
 import { theme, colorLight, colorDark } from '@styles/theme';
 import { checkStringTrue } from '@utils/stringTypeToBool';
+import { getValueFromLocalStorage, setValueToLocalStorage } from '@/utils/localStorage';
 
 interface Ichildren {
   children: ReactNode;
@@ -20,7 +21,7 @@ const ThemeContextState = {
 const ThemeContext = createContext<IthemeContext>(ThemeContextState);
 
 const ThemeProvider = ({ children }: Ichildren) => {
-  const localTheme = window.localStorage.getItem('theme');
+  const localTheme = getValueFromLocalStorage('theme');
   const systemPrefers = useMediaQuery({
     query: '(prefers-color-scheme: dark)',
   });
@@ -44,10 +45,10 @@ const useTheme = () => {
   const toggleTheme = useCallback(() => {
     if (isDarkMode) {
       setDarkMode?.(false);
-      window.localStorage.setItem('theme', 'false');
+      setValueToLocalStorage('theme', 'false');
     } else {
       setDarkMode?.(true);
-      window.localStorage.setItem('theme', 'true');
+      setValueToLocalStorage('theme', 'true');
     }
   }, [isDarkMode]);
 
