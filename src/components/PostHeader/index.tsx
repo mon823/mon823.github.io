@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SplitTag } from '@/components/Tag';
 
 const Wrapper = styled.div`
   padding-top: 30px;
@@ -32,16 +33,17 @@ interface Iprops {
   date: string;
   title: string;
   category: string;
+  tag: string | null;
 }
 
-const PostHeader = ({ date, title, category }: Iprops) => {
+const PostHeader = ({ date, title, category, tag }: Iprops) => {
   return (
     <Wrapper>
       <Category>{category}</Category>
       <br />
       <Title>{title}</Title>
       <br />
-      <br />
+      <SplitTag data={tag} />
       <br />
       <WriterDate>
         posted by <Writer>liendmch</Writer>, {date}

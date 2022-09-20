@@ -10,6 +10,7 @@ export interface IallMarkdownData {
             slug: string;
             series: string | null;
             category: string;
+            tag: string | null;
           };
         };
         next: {
@@ -38,6 +39,7 @@ export interface IpostData {
         slug: string;
         series: string | null;
         category: string;
+        tag: string | null;
       };
       html: string;
       tableOfContents: string;
