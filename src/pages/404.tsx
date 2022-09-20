@@ -1,49 +1,46 @@
-import * as React from "react"
-import { Link, HeadFC } from "gatsby"
+import * as React from 'react';
+import { Link, HeadFC } from 'gatsby';
+import { RouteComponentProps } from '@reach/router';
+import styled from 'styled-components';
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const PageStyles = styled.main`
+  color: ${({ theme }) => theme.color.textColor};
+  padding: 15% 15%;
+  font-family: 'SourceHanSerif';
+`;
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const Title = styled.h1`
+  color: ${({ theme }) => theme.color.textColor};
+  font-size: ${({ theme }) => theme.fontSize.xxl};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+`;
 
-const NotFoundPage = () => {
+const GoBack = styled.p`
+  all: unset;
+  color: ${({ theme }) => theme.color.textColor};
+  font-size: ${({ theme }) => theme.fontSize.lg};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
+const NotFoundPage = (props: RouteComponentProps) => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
+    <PageStyles>
+      <Title>Page not found</Title>
+      <br />
+      <br />
+      <p>
         Sorry 😔, we couldn’t find what you were looking for.
         <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
         <br />
-        <Link to="/">Go home</Link>.
+        &nbsp;&nbsp;
+        <GoBack onClick={() => history.back()}>Go Back</GoBack>.
       </p>
-    </main>
-  )
-}
+    </PageStyles>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head: HeadFC = () => <title>Not found</title>;
