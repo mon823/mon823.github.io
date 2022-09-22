@@ -31,9 +31,9 @@ const DarkModeBtn = styled.a`
 `;
 
 const DarkModeIcon = styled.img<{ isDark: boolean }>`
+  filter: ${props => (props.isDark ? 'invert(99%) sepia(15%) saturate(64%) hue-rotate(282deg) brightness(116%) contrast(95%)' : 'none')};
   object-fit: contain;
   width: ${btnSize.imgSize};
-  filter: ${props => (props.isDark ? 'invert(99%) sepia(15%) saturate(64%) hue-rotate(282deg) brightness(116%) contrast(95%)' : 'none')};
 `;
 
 const DarkMode = () => {
