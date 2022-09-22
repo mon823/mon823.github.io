@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
 import styled from 'styled-components';
 
 const TagBox = styled.div`
@@ -7,7 +7,7 @@ const TagBox = styled.div`
   font-size: ${({ theme }) => theme.fontSize.sm};
 `;
 
-const Tag = styled(Link)`
+const Tag = styled.div`
   all: unset;
   cursor: pointer;
   color: ${({ theme }) => theme.color.commonColor};
@@ -23,7 +23,13 @@ export const SplitTag = ({ data }: { data: string | null }) => {
       <TagBox>
         {tagList.map(tag => {
           return (
-            <Tag to={'/tag/' + tag} key={tag}>
+            <Tag
+              onClick={e => {
+                e.stopPropagation();
+                void navigate('/tag/' + tag);
+              }}
+              key={tag}
+            >
               {' '}
               #{tag}
             </Tag>

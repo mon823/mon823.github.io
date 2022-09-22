@@ -47,7 +47,7 @@ const checkNullBox = ({ title, slug, state }: { title: string; slug: string; sta
   return (
     <>
       {slug != '' ? (
-        <TailBtn to={'/post' + slug}>
+        <TailBtn to={'/post/' + slug}>
           <TailBtnDes>{state}</TailBtnDes> <br />
           <br /> <TailBtnTitle className="title">{title}</TailBtnTitle>
         </TailBtn>

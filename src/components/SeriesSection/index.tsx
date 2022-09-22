@@ -41,7 +41,7 @@ const Series = styled(Link)`
 
 export const SeriesSection = ({ series, title, slug }: { series: string; title: string; slug: string }) => {
   const data = useGetSeries(series);
-  const seriesSlug = slug.split('/')[1];
+  const seriesSlug = slug.split('/')[0];
   return (
     <Wrapper>
       <SeriesHeader to={'/post/' + seriesSlug}>
@@ -50,7 +50,7 @@ export const SeriesSection = ({ series, title, slug }: { series: string; title: 
       <br />
       <br />
       {data.map(({ node }, index) => {
-        const slug = '/post';
+        const slug = '/post/';
         if (title == node.frontmatter.title) {
           return (
             <SeriesBox key={node.id}>

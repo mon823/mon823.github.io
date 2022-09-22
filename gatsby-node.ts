@@ -14,9 +14,9 @@ const createSeriesPages = ({ actions, result }: { actions: Actions; result: Iall
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       if (node.frontmatter.series && !seriesSet.has(node.frontmatter.series)) {
         seriesSet.add(node.frontmatter.series);
-        const slug = node.frontmatter.slug.split('/')[1];
+        const slug = node.frontmatter.slug.split('/')[0];
         createPage({
-          path: `/post/${slug}`,
+          path: `/post/${slug}/`,
           component: seriesTemplate,
           context: {
             title: node.frontmatter.title,
@@ -44,7 +44,7 @@ const createPostPages = ({ actions, result }: { actions: Actions; result: IallMa
   if (result.data) {
     result.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
       createPage({
-        path: `/post${node.frontmatter.slug}`,
+        path: `/post/${node.frontmatter.slug}`,
         component: blogPostTemplate,
         context: {
           title: node.frontmatter.title,
