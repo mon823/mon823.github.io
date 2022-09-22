@@ -14,9 +14,9 @@ const createSeriesPages = ({ actions, result }: { actions: Actions; result: Iall
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       if (node.frontmatter.series && !seriesSet.has(node.frontmatter.series)) {
         seriesSet.add(node.frontmatter.series);
-        const slug = node.frontmatter.slug.split('/')[1];
+        const slug = node.frontmatter.slug.split('/')[0];
         createPage({
-          path: `/post/${slug}`,
+          path: `/post/${slug}/`,
           component: seriesTemplate,
           context: {
             title: node.frontmatter.title,
@@ -32,11 +32,68 @@ const createSeriesPages = ({ actions, result }: { actions: Actions; result: Iall
   }
 };
 
-// const createBoardPages = ({ actions, result }: { actions: Actions; result: IallMarkdownData }) => {
-//   const { createPage } = actions;
-//   if (result.data) {
-//   }
-// };
+const createBoardPages = ({ actions, result }: { actions: Actions; result: IallMarkdownData }) => {
+  const { createPage } = actions;
+  const boardTemplate = path.resolve('src/layouts/BoardTemplate.tsx');
+  const categorySet = new Set();
+  const seriesSet = new Set();
+  const tagSet = new Set();
+  if (result.data) {
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      if (node.frontmatter.series && !seriesSet.has(node.frontmatter.series)) {
+        seriesSet.add(node.frontmatter.series);
+        const slug = node.frontmatter.slug.split('/')[0];
+        const path = `/series/${slug}/`;
+        createPage({
+          path,
+          component: boardTemplate,
+          context: {
+            is: 'series',
+            slug: path,
+            target: node.frontmatter.series,
+          },
+        });
+      }
+      if (!categorySet.has(node.frontmatter.category)) {
+        const categoryList = node.frontmatter.category.split('/');
+        categoryList.reduce((accumulator: string, currentValue: string) => {
+          if (!categorySet.has(accumulator)) {
+            categorySet.add(accumulator);
+            const path = `/category/${accumulator}`;
+            createPage({
+              path,
+              component: boardTemplate,
+              context: {
+                is: 'category',
+                slug: path,
+                target: accumulator,
+              },
+            });
+          }
+          return accumulator + currentValue + '/';
+        }, '');
+      }
+      if (node.frontmatter.tag && !tagSet.has(node.frontmatter.tag)) {
+        const tagList = node.frontmatter.tag.split(' ');
+        tagList.forEach((tag: string) => {
+          if (!tagSet.has(tag)) {
+            tagSet.add(tag);
+            const path = `/tag/${tag}/`;
+            createPage({
+              path,
+              component: boardTemplate,
+              context: {
+                is: 'tag',
+                slug: path,
+                target: tag,
+              },
+            });
+          }
+        });
+      }
+    });
+  }
+};
 
 const createPostPages = ({ actions, result }: { actions: Actions; result: IallMarkdownData }) => {
   const { createPage } = actions;
@@ -44,7 +101,7 @@ const createPostPages = ({ actions, result }: { actions: Actions; result: IallMa
   if (result.data) {
     result.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
       createPage({
-        path: `/post${node.frontmatter.slug}`,
+        path: `/post/${node.frontmatter.slug}`,
         component: blogPostTemplate,
         context: {
           title: node.frontmatter.title,
@@ -96,6 +153,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql 
   if (result.errors) {
     return Promise.reject(result.errors);
   } else {
+    createBoardPages({ actions, result });
     createPostPages({ actions, result });
     createSeriesPages({ actions, result });
   }

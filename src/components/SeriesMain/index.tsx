@@ -32,7 +32,7 @@ export const SeriesMain = ({ series }: { series: string }) => {
       <br />
       <br />
       {data.map(({ node }, index) => {
-        const slug = '/post';
+        const slug = '/post/';
         return (
           <SeriesBox key={node.id}>
             <Series to={slug + node.frontmatter.slug}>

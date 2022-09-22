@@ -30,16 +30,28 @@ export interface IallMarkdownData {
   };
 }
 
+export interface Inode {
+  frontmatter: {
+    title: string;
+    slug: string;
+    series: string | null;
+    tag: string | null;
+    category: string;
+    date: string;
+  };
+  excerpt: string;
+}
+
 export interface IpostData {
   data: {
     markdownRemark: {
       frontmatter: {
         title: string;
-        date: string;
         slug: string;
         series: string | null;
-        category: string;
         tag: string | null;
+        category: string;
+        date: string;
       };
       html: string;
       tableOfContents: string;

@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SplitTag } from '@/components/Tag';
+import { Link } from 'gatsby';
 
 const Wrapper = styled.div`
   padding-top: 30px;
 `;
-const Category = styled.a`
+const Category = styled(Link)`
   font-size: ${({ theme }) => theme.fontSize.md};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
@@ -20,6 +21,7 @@ const WriterDate = styled.a`
 `;
 
 const Writer = styled.a`
+  all: unset;
   color: ${({ theme }) => theme.color.textColor};
 `;
 
@@ -39,7 +41,7 @@ interface Iprops {
 const PostHeader = ({ date, title, category, tag }: Iprops) => {
   return (
     <Wrapper>
-      <Category>{category}</Category>
+      <Category to={'/category/' + category}>{category}</Category>
       <br />
       <Title>{title}</Title>
       <br />
