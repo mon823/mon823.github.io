@@ -43,34 +43,32 @@ export const SeriesSection = ({ series, title, slug }: { series: string; title: 
   const data = useGetSeries(series);
   const seriesSlug = slug.split('/')[1];
   return (
-    <>
-      <Wrapper>
-        <SeriesHeader to={'/post/' + seriesSlug}>
-          SERIES: {series} <SeriesHeaderCount>({data.length})</SeriesHeaderCount>
-        </SeriesHeader>
-        <br />
-        <br />
-        {data.map(({ node }, index) => {
-          const slug = '/post';
-          if (title == node.frontmatter.title) {
-            return (
-              <SeriesBox key={node.id}>
-                <Current>
-                  {index + 1}. {node.frontmatter.title} {'<<'}
-                </Current>
-              </SeriesBox>
-            );
-          } else {
-            return (
-              <SeriesBox key={node.id}>
-                <Series to={slug + node.frontmatter.slug}>
-                  {index + 1}. {node.frontmatter.title}
-                </Series>
-              </SeriesBox>
-            );
-          }
-        })}
-      </Wrapper>
-    </>
+    <Wrapper>
+      <SeriesHeader to={'/post/' + seriesSlug}>
+        SERIES: {series} <SeriesHeaderCount>({data.length})</SeriesHeaderCount>
+      </SeriesHeader>
+      <br />
+      <br />
+      {data.map(({ node }, index) => {
+        const slug = '/post';
+        if (title == node.frontmatter.title) {
+          return (
+            <SeriesBox key={node.id}>
+              <Current>
+                {index + 1}. {node.frontmatter.title} {'<<'}
+              </Current>
+            </SeriesBox>
+          );
+        } else {
+          return (
+            <SeriesBox key={node.id}>
+              <Series to={slug + node.frontmatter.slug}>
+                {index + 1}. {node.frontmatter.title}
+              </Series>
+            </SeriesBox>
+          );
+        }
+      })}
+    </Wrapper>
   );
 };

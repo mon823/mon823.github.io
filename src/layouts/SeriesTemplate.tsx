@@ -10,12 +10,10 @@ const Template = (props: IpostData) => {
   const post = props.data.markdownRemark;
   const seriesTitle = post.frontmatter.series ? post.frontmatter.series : '';
   return (
-    <>
-      <Layout>
-        <PostHeader date={post.frontmatter.date} title={seriesTitle} category={post.frontmatter.category} tag={null} />
-        <SeriesMain series={seriesTitle} />
-      </Layout>
-    </>
+    <Layout>
+      <PostHeader date={post.frontmatter.date} title={seriesTitle} category={post.frontmatter.category} tag={null} />
+      <SeriesMain series={seriesTitle} />
+    </Layout>
   );
 };
 

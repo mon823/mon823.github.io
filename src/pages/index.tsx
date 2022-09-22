@@ -5,17 +5,9 @@ import Layout from '@layouts/MainLayout';
 import { RouteComponentProps } from '@reach/router';
 
 const IndexPage = (props: RouteComponentProps) => {
-  return (
-    <>
-      <Layout></Layout>
-    </>
-  );
+  return <Layout></Layout>;
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => (
-  <>
-    <title>Life Vending Machine</title>
-  </>
-);
+export const Head: HeadFC = () => <title>Life Vending Machine</title>;

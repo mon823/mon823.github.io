@@ -19,7 +19,7 @@ const WriterDate = styled.a`
   color: ${({ theme }) => theme.color.commonColor};
 `;
 
-const Writer = styled.span`
+const Writer = styled.a`
   color: ${({ theme }) => theme.color.textColor};
 `;
 

@@ -34,15 +34,13 @@ const NavMenu = styled.button`
 
 const Nav = () => {
   return (
-    <>
-      <Wrapper>
-        <Icon to="/">Life Vending Machine</Icon>
-        <NavMenuBox>
-          <NavMenu>about </NavMenu>
-          <NavMenu>posts</NavMenu>
-        </NavMenuBox>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Icon to="/">Life Vending Machine</Icon>
+      <NavMenuBox>
+        <NavMenu>about </NavMenu>
+        <NavMenu>posts</NavMenu>
+      </NavMenuBox>
+    </Wrapper>
   );
 };
 
