@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 const Wrapper = styled.nav`
   padding-bottom: 20px;
@@ -38,7 +38,13 @@ const Nav = () => {
       <Icon to="/">Life Vending Machine</Icon>
       <NavMenuBox>
         <NavMenu>about </NavMenu>
-        <NavMenu>posts</NavMenu>
+        <NavMenu
+          onClick={() => {
+            void navigate('/category/');
+          }}
+        >
+          posts
+        </NavMenu>
       </NavMenuBox>
     </Wrapper>
   );
