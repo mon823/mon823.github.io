@@ -23,14 +23,13 @@ interface Ichildren {
 
 const Layout = ({ children }: Ichildren) => {
   return (
-    <ThemeProvider>
-      <GlobalStyle />
+    <>
       <DarkMode />
       <Wrapper>
         <Nav />
         {children}
       </Wrapper>
-    </ThemeProvider>
+    </>
   );
 };
 
