@@ -1,6 +1,6 @@
-import React, { useState, createContext, useContext, ReactNode, useCallback } from 'react';
+import React, { useState, createContext, useContext, ReactNode, useCallback, useMemo } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { ThemeProvider as StyleProvider } from 'styled-components';
+import { DefaultTheme, ThemeProvider as StyleProvider } from 'styled-components';
 import { theme, colorLight, colorDark } from '@styles/theme';
 import { checkStringTrue } from '@utils/stringTypeToBool';
 import { getValueFromLocalStorage } from '@/utils/localStorage';
@@ -30,12 +30,14 @@ const ThemeProvider = ({ children }: Ichildren) => {
 
   const [isDarkMode, setDarkMode] = useState(isDarkState);
   const themeState = structuredClone(theme);
-
-  themeState.color = isDarkMode ? colorDark : colorLight;
+  const isTheme: DefaultTheme = useMemo(() => {
+    themeState.color = isDarkMode ? colorDark : colorLight;
+    return themeState;
+  }, [isDarkMode]);
 
   return (
     <ThemeContext.Provider value={{ isDarkMode, setDarkMode }}>
-      <StyleProvider theme={themeState}>{children}</StyleProvider>
+      <StyleProvider theme={isTheme}>{children}</StyleProvider>
     </ThemeContext.Provider>
   );
 };

@@ -39,13 +39,11 @@ const DarkModeIcon = styled.img<{ isDark: boolean }>`
 const DarkMode = () => {
   const [isDarkMode, toggleTheme] = useTheme();
   return (
-    <>
-      <Wrapper>
-        <DarkModeBtn onClick={toggleTheme}>
-          <DarkModeIcon src={darkMode} isDark={isDarkMode} />
-        </DarkModeBtn>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <DarkModeBtn onClick={toggleTheme}>
+        <DarkModeIcon src={darkMode} isDark={isDarkMode} />
+      </DarkModeBtn>
+    </Wrapper>
   );
 };
 
