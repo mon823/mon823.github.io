@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import { ThemeProvider as StyleProvider } from 'styled-components';
 import { theme, colorLight, colorDark } from '@styles/theme';
 import { checkStringTrue } from '@utils/stringTypeToBool';
-import { getValueFromLocalStorage, setValueToLocalStorage } from '@/utils/localStorage';
+import { getValueFromLocalStorage } from '@/utils/localStorage';
 
 interface Ichildren {
   children: ReactNode;
@@ -45,10 +45,10 @@ const useTheme = () => {
   const toggleTheme = useCallback(() => {
     if (isDarkMode) {
       setDarkMode?.(false);
-      setValueToLocalStorage('theme', 'false');
+      window.localStorage.setItem('theme', 'false');
     } else {
       setDarkMode?.(true);
-      setValueToLocalStorage('theme', 'true');
+      window.localStorage.setItem('theme', 'true');
     }
   }, [isDarkMode]);
 

@@ -22,7 +22,12 @@ export const SplitTag = ({ data }: { data: string | null }) => {
     return (
       <TagBox>
         {tagList.map(tag => {
-          return <Tag to={'/tag/' + tag}> #{tag}</Tag>;
+          return (
+            <Tag to={'/tag/' + tag} key={tag}>
+              {' '}
+              #{tag}
+            </Tag>
+          );
         })}
       </TagBox>
     );
