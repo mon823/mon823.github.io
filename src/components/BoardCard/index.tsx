@@ -6,13 +6,19 @@ import { navigate } from 'gatsby';
 import type { Inode } from '@/types/dataType';
 
 const Wrapper = styled.div`
-  border: 1px solid ${({ theme }) => theme.color.lineColor};
+  cursor: pointer;
   border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 15px;
   padding-left: 15px;
   padding-right: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+`;
+
+const Hr = styled.hr`
+  width: 95%;
+  background-color: ${({ theme }) => theme.color.lineColor};
+  opacity: 0.2;
 `;
 
 const LinkWrapper = styled.div`
@@ -72,37 +78,40 @@ const Category = styled.div`
 export const BoardCard = ({ node }: { node: Inode }) => {
   const seriesSlug = node.frontmatter.slug.split('/')[0];
   return (
-    <LinkWrapper
-      onClick={() => {
-        void navigate('/post/' + node.frontmatter.slug);
-      }}
-    >
-      <Wrapper>
-        <TitleBox>
-          <Title className="cardMain">{node.frontmatter.title}</Title>
-          <Series
-            onClick={e => {
-              e.stopPropagation();
-              void navigate('/post/' + seriesSlug);
-            }}
-          >
-            {node.frontmatter.series}
-          </Series>
-        </TitleBox>
-        <SplitTag data={node.frontmatter.tag}></SplitTag>
-        <Main>{node.excerpt}</Main>
-        <Info>
-          <Date>{node.frontmatter.date}</Date>
-          <Category
-            onClick={e => {
-              e.stopPropagation();
-              void navigate('/category/' + node.frontmatter.category);
-            }}
-          >
-            {node.frontmatter.category}
-          </Category>
-        </Info>
-      </Wrapper>
-    </LinkWrapper>
+    <>
+      <LinkWrapper
+        onClick={() => {
+          void navigate('/post/' + node.frontmatter.slug);
+        }}
+      >
+        <Wrapper>
+          <TitleBox>
+            <Title className="cardMain">{node.frontmatter.title}</Title>
+            <Series
+              onClick={e => {
+                e.stopPropagation();
+                void navigate('/post/' + seriesSlug);
+              }}
+            >
+              {node.frontmatter.series}
+            </Series>
+          </TitleBox>
+          <SplitTag data={node.frontmatter.tag}></SplitTag>
+          <Main>{node.excerpt}</Main>
+          <Info>
+            <Date>{node.frontmatter.date}</Date>
+            <Category
+              onClick={e => {
+                e.stopPropagation();
+                void navigate('/category/' + node.frontmatter.category);
+              }}
+            >
+              {node.frontmatter.category}
+            </Category>
+          </Info>
+        </Wrapper>
+      </LinkWrapper>
+      <Hr />
+    </>
   );
 };

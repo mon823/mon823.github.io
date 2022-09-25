@@ -55,6 +55,7 @@ export interface IpostData {
       };
       html: string;
       tableOfContents: string;
+      excerpt: string;
     };
   };
   pageContext: {
@@ -63,12 +64,14 @@ export interface IpostData {
         title: string;
         slug: string;
       };
+      excerpt: string;
     };
     previous?: {
       frontmatter: {
         title: string;
         slug: string;
       };
+      excerpt: string;
     };
   };
 }

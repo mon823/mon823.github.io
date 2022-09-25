@@ -36,6 +36,7 @@ export const pageQuery = graphql`
         category
         tag
       }
+      excerpt(truncate: true, pruneLength: 100)
     }
   }
 `;

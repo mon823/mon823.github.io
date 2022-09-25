@@ -7,9 +7,11 @@ export interface Iprops {
   pageContext: {
     next?: {
       frontmatter: Ifrontmatter;
+      excerpt: string;
     };
     previous?: {
       frontmatter: Ifrontmatter;
+      excerpt: string;
     };
   };
 }

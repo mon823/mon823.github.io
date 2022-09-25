@@ -139,12 +139,14 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions, graphql 
               slug
               title
             }
+            excerpt
           }
           previous {
             frontmatter {
               slug
               title
             }
+            excerpt(pruneLength: 200, truncate: true)
           }
         }
       }

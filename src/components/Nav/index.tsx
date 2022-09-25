@@ -14,9 +14,6 @@ const Icon = styled(Link)`
   justify-content: center;
   all: unset;
   cursor: pointer;
-  @media screen and (max-width: 499px) {
-    display: none;
-  }
 `;
 
 const NavMenuBox = styled.div`
