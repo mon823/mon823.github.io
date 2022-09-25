@@ -4,13 +4,13 @@ import { DarkMode } from '@/components/DarkModeBtn';
 import { Nav } from '@/components/Nav';
 
 const Wrapper = styled.div`
-  max-width: 720px;
+  max-width: 1080px;
   padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
 
   font-family: 'SourceHanSans';
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1150px) {
     padding: 30px 5%;
   }
 `;

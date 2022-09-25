@@ -7,7 +7,8 @@ const Wrapper = styled.div`
   z-index: 1000;
   top: 150px;
   right: 0px;
-  width: 350px;
+  padding-right: 10px;
+  max-width: 210px;
   font-size: ${({ theme }) => theme.fontSize.md};
   @media screen and (max-width: 1400px) {
     display: none;
