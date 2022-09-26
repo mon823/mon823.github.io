@@ -15,10 +15,10 @@ const Template = (props: IpostData) => {
   return (
     <Layout>
       <PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} tag={post.frontmatter.tag} />
+      <PostToc html={post.tableOfContents} />
       {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} slug={post.frontmatter.slug} /> : <></>}
       <PostMain html={post.html} />
       <PostTailBtn pageContext={pageContext} />
-      <PostToc html={post.tableOfContents} />
     </Layout>
   );
 };

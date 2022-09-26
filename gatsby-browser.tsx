@@ -1,4 +1,5 @@
 import * as React from 'react';
+require('prismjs/themes/prism-tomorrow.css');
 import { GlobalStyle } from '@/styles/GlobalStyle';
 import { ThemeProvider } from '@/hooks/useDarkMode';
 import type { GatsbySSR } from 'gatsby';
