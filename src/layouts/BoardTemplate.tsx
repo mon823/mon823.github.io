@@ -31,6 +31,12 @@ const NumPost = styled.div`
 
 const BoardWrapper = styled.div``;
 
+const Hr = styled.hr`
+  width: 95%;
+  background-color: ${({ theme }) => theme.color.lineColor};
+  opacity: 0.2;
+`;
+
 const Template = (props: Iprops) => {
   const result = getAllData(props.pageContext.target, props.pageContext.is);
   return (
@@ -40,6 +46,7 @@ const Template = (props: Iprops) => {
           {props.pageContext.is.toUpperCase()} : {props.pageContext.target == '' ? 'ALL' : props.pageContext.target}
         </Header>
         <NumPost>{result.length} post</NumPost>
+        <Hr />
         {result.map(data => {
           return (
             <BoardWrapper key={data.node.frontmatter.slug}>
