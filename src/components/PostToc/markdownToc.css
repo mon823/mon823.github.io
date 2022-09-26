@@ -15,9 +15,18 @@
 }
 .markdown-toc ul {
   list-style: none;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .markdown-toc li {
-  margin: 10px 0px;
+  margin: 20px 0px 0px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.markdown-toc p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
