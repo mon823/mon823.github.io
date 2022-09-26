@@ -17,6 +17,9 @@ const WordWrapper = styled.div`
   justify-content: center;
   padding: 10px;
   font-size: ${({ theme }) => theme.fontSize.xxl};
+  @media screen and (max-width: 499px) {
+    font-size: ${({ theme }) => theme.fontSize.xl};
+  }
 `;
 
 const Word = styled.div``;
