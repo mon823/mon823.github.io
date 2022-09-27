@@ -16,7 +16,7 @@ const Title = styled.a`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
-const WriterDate = styled.a`
+const WriterDate = styled.div`
   color: ${({ theme }) => theme.color.commonColor};
 `;
 

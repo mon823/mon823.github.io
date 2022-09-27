@@ -31,7 +31,6 @@ export const resetCss = css`
   body {
     width: 100%;
     height: 100%;
-    color: #333;
     font-size: 100%;
     font-weight: 500;
     line-height: 1.2;

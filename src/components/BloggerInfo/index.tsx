@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconGithub from '@/images/github.svg';
 import IconMail from '@/images/mail.svg';
+import { useTheme } from '@hooks/useDarkMode';
 
 const Wrapper = styled.div`
   margin-bottom: 50px;
@@ -27,11 +28,12 @@ const SocialLink = styled.span`
   padding: 10px;
 `;
 
-const Icon = styled.img`
+const Icon = styled.img<{ isDark: boolean }>`
   cursor: pointer;
   opacity: 0.6;
   padding-left: 10px;
   width: 34px;
+  filter: ${props => (props.isDark ? 'invert(100%) sepia(85%) saturate(365%) hue-rotate(34deg) brightness(108%) contrast(104%)' : 'none')};
 `;
 
 const WordStrong = styled.span`
@@ -39,6 +41,7 @@ const WordStrong = styled.span`
 `;
 
 export const BloggerInfo = () => {
+  const [isDarkMode] = useTheme();
   return (
     <Wrapper>
       <WordWrapper>
@@ -52,12 +55,14 @@ export const BloggerInfo = () => {
               window.open('https://github.com/mon823');
             }}
             src={IconGithub}
+            isDark={isDarkMode}
           />
           <Icon
             onClick={() => {
               window.open('mailto:liendmch@gmail.com');
             }}
             src={IconMail}
+            isDark={isDarkMode}
           />
         </SocialLink>
       </WordWrapper>

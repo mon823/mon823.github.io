@@ -9,6 +9,9 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-alias-imports',
@@ -85,6 +88,7 @@ const config: GatsbyConfig = {
       },
     },
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-preload-fonts`,
   ],
 };
 
