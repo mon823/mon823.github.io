@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  font-family: 'SourceHanSans';
   @media screen and (max-width: 1150px) {
     padding: 30px 5%;
   }

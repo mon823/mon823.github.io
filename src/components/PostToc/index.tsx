@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import '@/components/PostToc/markdownToc.css';
 
@@ -27,6 +27,11 @@ const Wrapper = styled.div`
       display: none;
     }
   }
+  @media screen and (min-width: 1521px) {
+    .markdown-toc {
+      display: block;
+    }
+  }
 `;
 const HeaderWrapper = styled.div`
   display: flex;
@@ -40,36 +45,62 @@ const Word = styled.p`
 `;
 
 const Btn = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.sm};
+  font-size: ${({ theme }) => theme.fontSize.xl};
 `;
 
 interface Iprops {
   html: string;
 }
 
-const tocSwitch = () => {
-  const el = document.querySelector<HTMLElement>('.markdown-toc');
-  const elBtn = document.querySelector<HTMLElement>('.toc-btn');
-  if (el && elBtn) {
-    if (el.style.display == '') el.style.display = 'block';
-    if (el.style.display == 'none') {
-      el.style.display = 'block';
-      elBtn.innerText = '▲';
-    } else {
-      el.style.display = 'none';
-      elBtn.innerText = '▼';
-    }
-  }
-};
-
 export const PostToc = ({ html }: Iprops) => {
+  const elMarkdownToc = useRef<HTMLDivElement>(null);
+  const elBtn = useRef<HTMLParagraphElement>(null);
+  const elWrapper = useRef<HTMLDivElement>(null);
+  const [isWide, setWide] = useState(true);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth > 1521) {
+        setWide(false);
+      } else {
+        setWide(true);
+      }
+    };
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    if (elMarkdownToc.current && elBtn.current) {
+      if (window.innerWidth < 1520) {
+        elMarkdownToc.current.style.display = 'none';
+        elBtn.current.innerText = '˅';
+      } else {
+        elMarkdownToc.current.style.display = 'block';
+        elBtn.current.innerText = '˄';
+      }
+    }
+    return () => window.removeEventListener('resize', updateSize);
+  }, [isWide]);
+
+  const tocSwitch = () => {
+    if (elMarkdownToc.current && elBtn.current) {
+      if (elMarkdownToc.current.style.display == 'none') {
+        elMarkdownToc.current.style.display = 'block';
+        elBtn.current.innerText = '˄';
+      } else {
+        elMarkdownToc.current.style.display = 'none';
+        elBtn.current.innerText = '˅';
+      }
+    }
+  };
+
   return (
     <Wrapper>
-      <HeaderWrapper onClick={tocSwitch}>
+      <HeaderWrapper ref={elWrapper} onClick={tocSwitch}>
         <Word>목차</Word>
-        <Btn className="toc-btn">▼</Btn>
+        <Btn className="toc-btn" ref={elBtn}>
+          ˅
+        </Btn>
       </HeaderWrapper>
-      <div className="markdown-toc" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="markdown-toc" ref={elMarkdownToc} dangerouslySetInnerHTML={{ __html: html }} />
     </Wrapper>
   );
 };
