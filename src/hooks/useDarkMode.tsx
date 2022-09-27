@@ -1,9 +1,7 @@
-import React, { useState, createContext, useContext, ReactNode, useCallback, useMemo } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React, { useState, createContext, useContext, ReactNode, useCallback, useMemo, useEffect } from 'react';
 import { DefaultTheme, ThemeProvider as StyleProvider } from 'styled-components';
 import { theme, colorLight, colorDark } from '@styles/theme';
-import { checkStringTrue } from '@utils/stringTypeToBool';
-import { getValueFromLocalStorage } from '@/utils/localStorage';
+import { checkStringTrue } from '@/utils/stringTypeToBool';
 
 interface Ichildren {
   children: ReactNode;
@@ -21,24 +19,33 @@ const ThemeContextState = {
 const ThemeContext = createContext<IthemeContext>(ThemeContextState);
 
 const ThemeProvider = ({ children }: Ichildren) => {
-  const localTheme = getValueFromLocalStorage('theme');
-  const systemPrefers = useMediaQuery({
-    query: '(prefers-color-scheme: dark)',
-  });
-  const osTheme = systemPrefers ? true : false;
-  const isDarkState = localTheme === '' ? osTheme : checkStringTrue(localTheme);
+  const [isDarkMode, setDarkMode] = useState<boolean>(false);
+  const [isLoad, setLoad] = useState(true);
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem('theme');
+    const systemPrefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const osTheme = systemPrefers ? true : false;
+    const isDarkState = localTheme == '' ? osTheme : checkStringTrue(localTheme);
 
-  const [isDarkMode, setDarkMode] = useState(isDarkState);
+    setDarkMode(isDarkState);
+    setLoad(false);
+  }, []);
+
   const themeState = structuredClone(theme);
   const isTheme: DefaultTheme = useMemo(() => {
     themeState.color = isDarkMode ? colorDark : colorLight;
+
     return themeState;
   }, [isDarkMode]);
 
-  return (
-    <ThemeContext.Provider value={{ isDarkMode, setDarkMode }}>
-      <StyleProvider theme={isTheme}>{children}</StyleProvider>
-    </ThemeContext.Provider>
+  return isLoad ? (
+    <></>
+  ) : (
+    <>
+      <ThemeContext.Provider value={{ isDarkMode, setDarkMode }}>
+        <StyleProvider theme={isTheme}>{children}</StyleProvider>
+      </ThemeContext.Provider>
+    </>
   );
 };
 
