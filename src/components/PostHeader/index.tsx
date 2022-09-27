@@ -20,7 +20,7 @@ const WriterDate = styled.a`
   color: ${({ theme }) => theme.color.commonColor};
 `;
 
-const Writer = styled.a`
+const Writer = styled.p`
   all: unset;
   color: ${({ theme }) => theme.color.textColor};
 `;
