@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import IconGithub from '@/images/github.svg';
+import IconMail from '@/images/mail.svg';
 
 const Wrapper = styled.div`
   margin-bottom: 50px;
@@ -29,11 +27,11 @@ const SocialLink = styled.span`
   padding: 10px;
 `;
 
-const FontAwesome = styled(FontAwesomeIcon)`
+const Icon = styled.img`
   cursor: pointer;
   opacity: 0.6;
-  font-size: ${({ theme }) => theme.fontSize.xl};
   padding-left: 10px;
+  width: 34px;
 `;
 
 const WordStrong = styled.span`
@@ -49,17 +47,17 @@ export const BloggerInfo = () => {
           <br /> 개발자<WordStrong> 문석암 </WordStrong>입니다.
         </Word>
         <SocialLink>
-          <FontAwesome
+          <Icon
             onClick={() => {
               window.open('https://github.com/mon823');
             }}
-            icon={faGithub as IconProp}
+            src={IconGithub}
           />
-          <FontAwesome
+          <Icon
             onClick={() => {
               window.open('mailto:liendmch@gmail.com');
             }}
-            icon={faEnvelope as IconProp}
+            src={IconMail}
           />
         </SocialLink>
       </WordWrapper>

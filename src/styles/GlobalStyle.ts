@@ -95,6 +95,7 @@ export const resetCss = css`
 export const GlobalStyle = createGlobalStyle`
   ${resetCss}
   body {
+    font-family: 'SourceHanSans';
     background-color: ${({ theme }) => theme.color.bgColor};
     color : ${({ theme }) => theme.color.textColor};
     width: 100%;
