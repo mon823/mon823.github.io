@@ -7,11 +7,13 @@ import { SeriesSection } from '@/components/SeriesSection';
 import { PostTailBtn } from '@/components/PostTailBtn';
 import { PostToc } from '@/components/PostToc';
 import { Seo } from '@/components/SEO';
+import { Utterances } from '@/components/Utterances';
 
 import type { IpostData } from '@/types/dataType';
 
 const Template = (props: IpostData) => {
   const post = props.data.markdownRemark;
+  const { repo } = props.data.site.siteMetadata.comments.utterances;
   const pageContext = props.pageContext;
   return (
     <Layout>
@@ -21,6 +23,7 @@ const Template = (props: IpostData) => {
       {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} slug={post.frontmatter.slug} /> : <></>}
       <PostMain html={post.html} />
       <PostTailBtn pageContext={pageContext} />
+      <Utterances repo={repo} />
     </Layout>
   );
 };
@@ -39,6 +42,15 @@ export const pageQuery = graphql`
         tag
       }
       excerpt(truncate: true, pruneLength: 100)
+    }
+    site {
+      siteMetadata {
+        comments {
+          utterances {
+            repo
+          }
+        }
+      }
     }
   }
 `;

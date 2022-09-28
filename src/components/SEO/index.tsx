@@ -34,7 +34,6 @@ export const Seo = ({ title, description }: { title: string; description: string
       }
     `,
   );
-  console.log(site);
   const desc = description ? description : site.siteMetadata.description;
   return (
     <Helmet

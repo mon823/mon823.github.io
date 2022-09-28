@@ -15,7 +15,7 @@ const metaConfig = {
   },
   comments: {
     utterances: {
-      repo: ``,
+      repo: `mon823/blog-comments`,
     },
   },
   ga: ``, //Google Analytics Tracking ID
