@@ -2,7 +2,7 @@ const metaConfig = {
   title: `life vending machine`,
   description: '개발 블로그',
   siteUrl: `https://mon823.github.io/`,
-  ogImage: `/src/static/og-image.png`,
+  ogImage: `/og-image.png`,
   author: {
     name: '문석암',
     info: {
