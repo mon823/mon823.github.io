@@ -41,6 +41,17 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `life vending machine`,
+        short_name: `L.V.M`,
+        start_url: `/`,
+        description: 'Dev Blog',
+        display: `standalone`,
+        icon: `src/static/favicon.png`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -87,6 +98,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preload-fonts`,
   ],
