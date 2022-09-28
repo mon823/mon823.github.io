@@ -64,6 +64,7 @@ export const Head = (props: IpostData) => {
         <title>{post.frontmatter.title}</title>
         <meta property="og:title" content={post.frontmatter.title} />
         <meta name="description" content={post.excerpt} />
+        <meta name="og:description" content={post.excerpt} />
         <meta name="keywords" content={post.frontmatter.tag ? post.frontmatter.tag : undefined} />
       </Seo>
     </>
