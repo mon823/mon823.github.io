@@ -96,10 +96,19 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://github.com/mon823',
+        sitemap: 'https://github.com/mon823/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-advanced-sitemap`,
   ],
 };
 
