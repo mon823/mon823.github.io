@@ -28,6 +28,7 @@ export const Head = (props: HeadProps) => (
     <Seo>
       <title>Life Vending Machine</title>
       <meta name="description" content="개발 일지 블로그" />
+      <meta name="og:description" content="개발 일지 블로그" />
       <meta property="og:title" content="Life Vending Machine" />
     </Seo>
   </>
