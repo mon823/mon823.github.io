@@ -45,6 +45,9 @@ const Series = styled.div`
   &:hover {
     text-decoration: underline;
   }
+  @media screen and (max-width: 499px) {
+    display: none;
+  }
 `;
 
 const Main = styled.p`
