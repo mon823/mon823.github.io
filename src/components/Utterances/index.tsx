@@ -41,8 +41,6 @@ export const Utterances = React.memo(({ repo }: { repo: string }) => {
 
     const utterancesEl = containerRef.current?.querySelector<HTMLIFrameElement>(utterancesSelector);
     utterancesEl ? postThemeMessage() : createUtteranesElement();
-
-    // isUtterancesLoaded.current = true;
   }, [repo, isDarkMode]);
 
   return <div className="utterances" ref={containerRef} />;

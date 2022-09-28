@@ -12,7 +12,7 @@ const IndexPage = (props: RouteComponentProps) => {
 
   return (
     <Layout>
-      <Seo title="life vending machine" description={undefined} />
+      <Seo title="life vending machine" description={undefined} tag={undefined} />
       <BloggerInfo></BloggerInfo>
       {result.map(data => {
         return <BoardCard key={data.node.frontmatter.slug} node={data.node}></BoardCard>;

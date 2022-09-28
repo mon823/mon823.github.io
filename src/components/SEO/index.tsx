@@ -16,7 +16,7 @@ interface Isite {
   };
 }
 
-export const Seo = ({ title, description }: { title: string; description: string | undefined }) => {
+export const Seo = ({ title, description, tag }: { title: string; description: string | undefined; tag: string | undefined }) => {
   const { site }: Isite = useStaticQuery(
     graphql`
       query {
@@ -41,6 +41,18 @@ export const Seo = ({ title, description }: { title: string; description: string
       title={title}
       defaultTitle={site.siteMetadata.title}
       meta={[
+        {
+          name: 'google-site-verification',
+          content: '3gk2BDxrfQnrmg_Os3kgsIXFTc47ZUKpmIX590CmdHA',
+        },
+        {
+          name: 'description',
+          content: desc,
+        },
+        {
+          name: 'keywords',
+          content: tag,
+        },
         {
           property: `og:title`,
           content: title,
@@ -72,10 +84,6 @@ export const Seo = ({ title, description }: { title: string; description: string
         {
           property: `og:type`,
           content: `website`,
-        },
-        {
-          property: 'google-site-verification',
-          content: '3gk2BDxrfQnrmg_Os3kgsIXFTc47ZUKpmIX590CmdHA',
         },
       ]}
     />
