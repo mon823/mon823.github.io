@@ -46,7 +46,7 @@ const config: GatsbyConfig = {
         start_url: `/`,
         description: 'Dev Blog',
         display: `standalone`,
-        icon: `src/static/favicon.png`,
+        icon: `static/favicon.png`,
       },
     },
     {

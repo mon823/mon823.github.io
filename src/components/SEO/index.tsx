@@ -48,6 +48,7 @@ export const Seo = ({ children }: Ichildren) => {
       <meta property="og:author" content={site.siteMetadata.author.name} />
       <meta property="og:locale" content="ko" />
       <meta property="og:type" content="website" />
+      <meta name="robots" content="index" />
       {children}
     </>
   );
