@@ -73,6 +73,10 @@ export const Seo = ({ title, description }: { title: string; description: string
           property: `og:type`,
           content: `website`,
         },
+        {
+          property: 'google-site-verification',
+          content: '3gk2BDxrfQnrmg_Os3kgsIXFTc47ZUKpmIX590CmdHA',
+        },
       ]}
     />
   );
