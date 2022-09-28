@@ -12,7 +12,6 @@ const Template = (props: IpostData) => {
   const seriesTitle = post.frontmatter.series ? post.frontmatter.series : '';
   return (
     <Layout>
-      <Seo title={seriesTitle} description={undefined} tag={undefined} />
       <PostHeader date={post.frontmatter.date} title={seriesTitle} category={post.frontmatter.category} tag={null} />
       <SeriesMain series={seriesTitle} />
     </Layout>
@@ -36,3 +35,16 @@ export const pageQuery = graphql`
 `;
 
 export default Template;
+
+export const Head = (props: IpostData) => {
+  const post = props.data.markdownRemark;
+  const seriesTitle = post.frontmatter.series ? post.frontmatter.series : '';
+  return (
+    <>
+      <Seo>
+        <title>{seriesTitle}</title>
+        <meta property="og:title" content={seriesTitle} />
+      </Seo>
+    </>
+  );
+};
