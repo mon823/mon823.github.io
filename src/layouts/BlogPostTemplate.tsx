@@ -17,7 +17,7 @@ const Template = (props: IpostData) => {
   const pageContext = props.pageContext;
   return (
     <Layout>
-      <Seo title={post.frontmatter.title} description={post.excerpt} />
+      <Seo title={post.frontmatter.title} description={post.excerpt} tag={post.frontmatter.tag ? post.frontmatter.tag : undefined} />
       <PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} tag={post.frontmatter.tag} />
       <PostToc html={post.tableOfContents} />
       {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} slug={post.frontmatter.slug} /> : <></>}

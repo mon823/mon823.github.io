@@ -42,7 +42,7 @@ const Template = (props: Iprops) => {
   const result = getAllData(props.pageContext.target, props.pageContext.is);
   return (
     <Layout>
-      <Seo title={props.pageContext.target == '' ? 'Category Home' : 'Post : ' + props.pageContext.target} description={undefined} />
+      <Seo title={props.pageContext.target == '' ? 'Category Home' : 'Post : ' + props.pageContext.target} description={undefined} tag={undefined} />
       <Wrapper>
         <Header>
           {props.pageContext.is.toUpperCase()} : {props.pageContext.target == '' ? 'ALL' : props.pageContext.target}
