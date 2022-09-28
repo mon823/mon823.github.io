@@ -107,7 +107,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preload-fonts`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-advanced-sitemap`,
   ],
 };

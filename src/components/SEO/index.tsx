@@ -1,6 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React, { ReactNode } from 'react';
 
 interface Isite {
   site: {
@@ -16,7 +15,11 @@ interface Isite {
   };
 }
 
-export const Seo = ({ title, description, tag }: { title: string; description: string | undefined; tag: string | undefined }) => {
+interface Ichildren {
+  children?: ReactNode;
+}
+
+export const Seo = ({ children }: Ichildren) => {
   const { site }: Isite = useStaticQuery(
     graphql`
       query {
@@ -34,58 +37,18 @@ export const Seo = ({ title, description, tag }: { title: string; description: s
       }
     `,
   );
-  const desc = description ? description : site.siteMetadata.description;
+
   return (
-    <Helmet
-      htmlAttributes={{ lang: 'ko' }}
-      title={title}
-      defaultTitle={site.siteMetadata.title}
-      meta={[
-        {
-          name: 'google-site-verification',
-          content: '3gk2BDxrfQnrmg_Os3kgsIXFTc47ZUKpmIX590CmdHA',
-        },
-        {
-          name: 'description',
-          content: desc,
-        },
-        {
-          name: 'keywords',
-          content: tag,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:site_title`,
-          content: title,
-        },
-        {
-          property: `og:url`,
-          content: site.siteMetadata.siteUrl,
-        },
-        {
-          property: `og:site_name`,
-          content: site.siteMetadata.title,
-        },
-        {
-          property: 'og:image',
-          content: site.siteMetadata.ogImage,
-        },
-        {
-          property: `og:description`,
-          content: desc,
-        },
-        {
-          property: 'og:author',
-          content: site.siteMetadata.author.name,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-      ]}
-    />
+    <>
+      <meta name="google-site-verification" content="3gk2BDxrfQnrmg_Os3kgsIXFTc47ZUKpmIX590CmdHA" />
+      <meta property="og:site_title" content={site.siteMetadata.title} />
+      <meta property="og:url" content={site.siteMetadata.siteUrl} />
+      <meta property="og:site_name" content={site.siteMetadata.title} />
+      <meta property="og:image" content={site.siteMetadata.ogImage} />
+      <meta property="og:author" content={site.siteMetadata.author.name} />
+      <meta property="og:locale" content="ko" />
+      <meta property="og:type" content="website" />
+      {children}
+    </>
   );
 };
