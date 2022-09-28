@@ -25,7 +25,7 @@ const ThemeProvider = ({ children }: Ichildren) => {
     const localTheme = window.localStorage.getItem('theme');
     const systemPrefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const osTheme = systemPrefers ? true : false;
-    const isDarkState = localTheme == '' ? osTheme : checkStringTrue(localTheme);
+    const isDarkState = localTheme == null ? osTheme : checkStringTrue(localTheme);
 
     setDarkMode(isDarkState);
     setLoad(false);
