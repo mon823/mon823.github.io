@@ -3,6 +3,7 @@ import Layout from '@/layouts/MainLayout';
 import { PostHeader } from '@/components/PostHeader';
 import { SeriesMain } from '@/components/SeriesMain';
 import { graphql } from 'gatsby';
+import { Seo } from '@/components/SEO';
 
 import type { IpostData } from '@/types/dataType';
 
@@ -11,6 +12,7 @@ const Template = (props: IpostData) => {
   const seriesTitle = post.frontmatter.series ? post.frontmatter.series : '';
   return (
     <Layout>
+      <Seo title={seriesTitle} description={undefined} />
       <PostHeader date={post.frontmatter.date} title={seriesTitle} category={post.frontmatter.category} tag={null} />
       <SeriesMain series={seriesTitle} />
     </Layout>

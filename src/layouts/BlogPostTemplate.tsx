@@ -6,6 +6,7 @@ import { PostMain } from '@/components/PostMain';
 import { SeriesSection } from '@/components/SeriesSection';
 import { PostTailBtn } from '@/components/PostTailBtn';
 import { PostToc } from '@/components/PostToc';
+import { Seo } from '@/components/SEO';
 
 import type { IpostData } from '@/types/dataType';
 
@@ -14,6 +15,7 @@ const Template = (props: IpostData) => {
   const pageContext = props.pageContext;
   return (
     <Layout>
+      <Seo title={post.frontmatter.title} description={post.excerpt} />
       <PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} tag={post.frontmatter.tag} />
       <PostToc html={post.tableOfContents} />
       {post.frontmatter.series ? <SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} slug={post.frontmatter.slug} /> : <></>}
