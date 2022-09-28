@@ -1960,7 +1960,14 @@ type SiteFieldsEnum =
   | 'pathPrefix'
   | 'polyfill'
   | 'port'
+  | 'siteMetadata.author.info.role'
+  | 'siteMetadata.author.name'
+  | 'siteMetadata.author.social.email'
+  | 'siteMetadata.author.social.github'
+  | 'siteMetadata.comments.utterances.repo'
   | 'siteMetadata.description'
+  | 'siteMetadata.ga'
+  | 'siteMetadata.ogImage'
   | 'siteMetadata.siteUrl'
   | 'siteMetadata.title'
   | 'trailingSlash';
@@ -2760,13 +2767,67 @@ type SitePluginSortInput = {
 };
 
 type SiteSiteMetadata = {
+  readonly author: Maybe<SiteSiteMetadataAuthor>;
+  readonly comments: Maybe<SiteSiteMetadataComments>;
   readonly description: Maybe<Scalars['String']>;
+  readonly ga: Maybe<Scalars['String']>;
+  readonly ogImage: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
 };
 
+type SiteSiteMetadataAuthor = {
+  readonly info: Maybe<SiteSiteMetadataAuthorInfo>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly social: Maybe<SiteSiteMetadataAuthorSocial>;
+};
+
+type SiteSiteMetadataAuthorFilterInput = {
+  readonly info: InputMaybe<SiteSiteMetadataAuthorInfoFilterInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly social: InputMaybe<SiteSiteMetadataAuthorSocialFilterInput>;
+};
+
+type SiteSiteMetadataAuthorInfo = {
+  readonly role: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataAuthorInfoFilterInput = {
+  readonly role: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataAuthorSocial = {
+  readonly email: Maybe<Scalars['String']>;
+  readonly github: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataAuthorSocialFilterInput = {
+  readonly email: InputMaybe<StringQueryOperatorInput>;
+  readonly github: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteSiteMetadataComments = {
+  readonly utterances: Maybe<SiteSiteMetadataCommentsUtterances>;
+};
+
+type SiteSiteMetadataCommentsFilterInput = {
+  readonly utterances: InputMaybe<SiteSiteMetadataCommentsUtterancesFilterInput>;
+};
+
+type SiteSiteMetadataCommentsUtterances = {
+  readonly repo: Maybe<Scalars['String']>;
+};
+
+type SiteSiteMetadataCommentsUtterancesFilterInput = {
+  readonly repo: InputMaybe<StringQueryOperatorInput>;
+};
+
 type SiteSiteMetadataFilterInput = {
+  readonly author: InputMaybe<SiteSiteMetadataAuthorFilterInput>;
+  readonly comments: InputMaybe<SiteSiteMetadataCommentsFilterInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly ga: InputMaybe<StringQueryOperatorInput>;
+  readonly ogImage: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };

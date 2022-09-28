@@ -109,5 +109,5 @@
       "@types/*": ["src/types/*"]
     }
   },
-  "include": ["./src/**/*", "./gatsby-node.ts", "gatsby-ssr.tsx", "gatsby-browser.tsx", "./gatsby-config.ts", "./plugins/**/*"]
+  "include": ["./src/**/*", "./gatsby-node.ts", "gatsby-ssr.tsx", "gatsby-browser.tsx", "./gatsby-config.ts", "./meta-config.ts", "./plugins/**/*"]
 }

@@ -11,7 +11,8 @@ const Category = styled(Link)`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
-const Title = styled.a`
+const Title = styled.title`
+  all: unset;
   font-size: ${({ theme }) => theme.fontSize.xxl};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;

@@ -57,6 +57,15 @@ export interface IpostData {
       tableOfContents: string;
       excerpt: string;
     };
+    site: {
+      siteMetadata: {
+        comments: {
+          utterances: {
+            repo: string;
+          };
+        };
+      };
+    };
   };
   pageContext: {
     next?: {

@@ -1,10 +1,8 @@
 import type { GatsbyConfig } from 'gatsby';
+import metaConfig from './meta-config';
 
 const config: GatsbyConfig = {
-  siteMetadata: {
-    title: `life vending machine`,
-    siteUrl: `https://mon823.github.io/`,
-  },
+  siteMetadata: metaConfig,
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
@@ -38,6 +36,17 @@ const config: GatsbyConfig = {
       options: {
         name: 'markdown-pages',
         path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `life vending machine`,
+        short_name: `L.V.M`,
+        start_url: `/`,
+        description: 'Dev Blog',
+        display: `standalone`,
+        icon: `src/static/favicon.png`,
       },
     },
     {
@@ -87,8 +96,19 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://github.com/mon823',
+        sitemap: 'https://github.com/mon823/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-advanced-sitemap`,
   ],
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@/layouts/MainLayout';
 import { BoardCard } from '@/components/BoardCard';
 import { getAllData } from '@/hooks/getAllData';
+import { Seo } from '@/components/SEO';
 import styled from 'styled-components';
 
 interface Iprops {
@@ -41,6 +42,7 @@ const Template = (props: Iprops) => {
   const result = getAllData(props.pageContext.target, props.pageContext.is);
   return (
     <Layout>
+      <Seo title={props.pageContext.target == '' ? 'Category Home' : 'Post : ' + props.pageContext.target} description={undefined} />
       <Wrapper>
         <Header>
           {props.pageContext.is.toUpperCase()} : {props.pageContext.target == '' ? 'ALL' : props.pageContext.target}
