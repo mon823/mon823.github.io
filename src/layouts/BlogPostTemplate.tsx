@@ -30,7 +30,7 @@ export const pageQuery = graphql`
   query ($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
-      tableOfContents
+      tableOfContents(maxDepth: 3)
       frontmatter {
         date(formatString: "YYYY년 MM월 DD일 ")
         title
