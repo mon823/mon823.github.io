@@ -47,7 +47,9 @@ export const PostToc = ({ html, title }: Iprops) => {
       elementArray.forEach((e, index) => {
         aTagList[index].style.backgroundColor = 'transparent';
       });
-      aTagList[result].style.backgroundColor = '#2ae2052d';
+      if (result != -1) {
+        aTagList[result].style.backgroundColor = '#2ae2052d';
+      }
     };
     window.addEventListener('scroll', updateOffsetY);
 
