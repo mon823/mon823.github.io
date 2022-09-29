@@ -66,8 +66,8 @@ export const Head = (props: Iprops) => {
   return (
     <>
       <Seo>
-        <title>{props.pageContext.target == '' ? 'ALL' : props.pageContext.target}</title>
-        <meta property="og:title" content={props.pageContext.target == '' ? 'ALL' : props.pageContext.target} />
+        <title>{props.pageContext.target == '' ? 'Post: All' : 'Post: ' + props.pageContext.target}</title>
+        <meta property="og:title" content={props.pageContext.target == '' ? 'Post: All' : 'Post: ' + props.pageContext.target} />
       </Seo>
     </>
   );

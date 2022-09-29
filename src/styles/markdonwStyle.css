@@ -2,8 +2,8 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 2;
   word-wrap: break-word;
 }
 
@@ -129,7 +129,7 @@
   overflow: hidden;
   background: transparent;
   border-bottom: 1px solid hsla(210, 18%, 87%, 1);
-  height: 0.25em;
+  height: 0.05em;
   padding: 0;
   margin: 24px 0;
   background-color: #d0d7de;
