@@ -1,9 +1,7 @@
 import React from 'react';
 import Layout from '@/layouts/MainLayout';
-import { PostHeader } from '@/components/PostHeader';
-import { SeriesMain } from '@/components/SeriesMain';
+import * as Components from '@/components';
 import { graphql } from 'gatsby';
-import { Seo } from '@/components/SEO';
 
 import type { IpostData } from '@/types/dataType';
 
@@ -12,8 +10,8 @@ const Template = (props: IpostData) => {
   const seriesTitle = post.frontmatter.series ? post.frontmatter.series : '';
   return (
     <Layout>
-      <PostHeader date={post.frontmatter.date} title={seriesTitle} category={post.frontmatter.category} tag={null} />
-      <SeriesMain series={seriesTitle} />
+      <Components.PostHeader date={post.frontmatter.date} title={seriesTitle} category={post.frontmatter.category} tag={null} />
+      <Components.SeriesMain series={seriesTitle} />
     </Layout>
   );
 };
@@ -41,10 +39,10 @@ export const Head = (props: IpostData) => {
   const seriesTitle = post.frontmatter.series ? post.frontmatter.series : '';
   return (
     <>
-      <Seo>
+      <Components.Seo>
         <title>{seriesTitle}</title>
         <meta property="og:title" content={seriesTitle} />
-      </Seo>
+      </Components.Seo>
     </>
   );
 };

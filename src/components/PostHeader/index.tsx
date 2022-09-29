@@ -39,7 +39,7 @@ interface Iprops {
   tag: string | null;
 }
 
-const PostHeader = ({ date, title, category, tag }: Iprops) => {
+export const PostHeader = ({ date, title, category, tag }: Iprops) => {
   return (
     <Wrapper>
       <Category to={'/category/' + category}>{category}</Category>
@@ -55,5 +55,3 @@ const PostHeader = ({ date, title, category, tag }: Iprops) => {
     </Wrapper>
   );
 };
-
-export { PostHeader };

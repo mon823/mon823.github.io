@@ -2,8 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { GlobalStyle } from '@/styles/GlobalStyle';
 import { ThemeProvider } from '@/hooks/useDarkMode';
-import { DarkMode } from '@/components/DarkModeBtn';
-import { Nav } from '@/components/Nav';
+import * as Components from '@/components';
 
 const Wrapper = styled.div`
   max-width: 1080px;
@@ -25,9 +24,9 @@ const Layout = ({ children }: Ichildren) => {
     <>
       <ThemeProvider>
         <GlobalStyle />
-        <DarkMode />
+        <Components.DarkMode />
         <Wrapper>
-          <Nav />
+          <Components.Nav />
           {children}
         </Wrapper>
       </ThemeProvider>

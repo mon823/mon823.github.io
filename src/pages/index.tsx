@@ -5,6 +5,7 @@ import Layout from '@layouts/MainLayout';
 import { RouteComponentProps } from '@reach/router';
 import { getAllData } from '@/hooks/getAllData';
 import { BoardCard } from '@/components/BoardCard';
+import * as Components from '@/components';
 import { BloggerInfo } from '@/components/BloggerInfo';
 import { Seo } from '@/components/SEO';
 
@@ -13,7 +14,7 @@ const IndexPage = (props: RouteComponentProps) => {
 
   return (
     <Layout>
-      <BloggerInfo></BloggerInfo>
+      <Components.BloggerInfo></Components.BloggerInfo>
       {result.map(data => {
         return <BoardCard key={data.node.frontmatter.slug} node={data.node}></BoardCard>;
       })}
