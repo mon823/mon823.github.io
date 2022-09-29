@@ -6,7 +6,7 @@ export { PostHeader } from '@/components/PostHeader';
 export { PostMain } from '@/components/PostMain';
 export { PostTailBtn } from '@/components/PostTailBtn';
 export { Seo } from '@/components/SEO';
-// export { PostToc } from '@/components/PostToc';
+export { PostToc } from '@/components/PostToc';
 export { SeriesMain } from '@/components/SeriesMain';
 export { SeriesSection } from '@/components/SeriesSection';
 export { SplitTag } from '@/components/Tag';

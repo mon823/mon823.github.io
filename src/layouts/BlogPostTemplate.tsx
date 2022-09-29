@@ -12,7 +12,7 @@ const Template = (props: IpostData) => {
   return (
     <Layout>
       <Components.PostHeader date={post.frontmatter.date} title={post.frontmatter.title} category={post.frontmatter.category} tag={post.frontmatter.tag} />
-      {/* <Components.PostToc html={post.tableOfContents} title={post.frontmatter.title} /> */}
+      <Components.PostToc html={post.tableOfContents} title={post.frontmatter.title} />
       {post.frontmatter.series ? (
         <Components.SeriesSection series={post.frontmatter.series} title={post.frontmatter.title} slug={post.frontmatter.slug} />
       ) : (
