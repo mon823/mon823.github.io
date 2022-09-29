@@ -14,7 +14,7 @@ Git npm 등는 기본적으로 설치되어 있다는 가정하에 시작합니�
 
 <br/>
 
-## Gatsby 설치
+# Gatsby 설치
 
 먼저 **gatsby-cli** 부터 설치해야합니다.
 
@@ -24,7 +24,7 @@ $ npm install -g gatsby-cli
 
 <br/>
 
-## 1. 프로젝트 생성
+# 1. 프로젝트 생성
 
 ```bash
 $ gatsby new
@@ -42,7 +42,7 @@ $ gatsby new
 
 <br/>
 
-## 2. 실행
+# 2. 실행
 
 ```bash
 $ npm run develop
@@ -58,7 +58,7 @@ $ npm run develop
 
 <br/>
 
-## 3. Deploy 구성하기
+# 3. Deploy 구성하기
 
 ⚠ Git에 대한 설명은 없습니다. 이해가 안되시면 넘어가셔도 좋습니다. 나중에 Deply 하면 되니까요!
 
@@ -99,7 +99,7 @@ on:
 
 <br/>
 
-## 4. Deploy 결과
+# 4. Deploy 결과
 
 이제 해당 브런치에 PUSH 하면 다음과 같이 Deply가 됩니다.~
 
@@ -109,6 +109,6 @@ on:
 
 <br/>
 
-## P.S
+# P.S
 
 아직 갈길이 멀다...

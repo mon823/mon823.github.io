@@ -8,7 +8,7 @@ title: Gatsby로 Blog 만들기 서론
 tag: Gatsby Gatsbyjs Blog Typescript
 ---
 
-## 서론
+# 서론
 
 항상 블로그를 가지고 싶었지만, 개발자로서 뭔가 내가 직접 구성하고싶다는 욕망이 넘쳐 쉽사리 시작도 못 하고 있었다.
 
@@ -18,7 +18,7 @@ GatsbyJS는 유명한 정적 사이트 생성기이며 React를 이용해 만들
 
 <br/>
 
-## 개발 스택
+# 개발 스택
 
 - gatsby
 - graphql
@@ -30,7 +30,7 @@ graphql과 react는 Gatsby를 사용한다면 필수사항이라 생각되고 CS
 
 <br/>
 
-## 개발 예정 사항
+# 개발 예정 사항
 
 - Darkmode
 - Tag / Category / Series 별 분류
@@ -45,6 +45,6 @@ graphql과 react는 Gatsby를 사용한다면 필수사항이라 생각되고 CS
 
 <br/>
 
-## (끝으로)
+# (끝으로)
 
 아마도 이글을 보고 있다면 개발이 진행 중이거나 개발이 끝난 상태일 것이다. 꾸준히..? 작성해보도록 하겠다.
