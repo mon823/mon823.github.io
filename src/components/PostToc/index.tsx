@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Wrapper, HeaderWrapper, Word, Btn, UpScrollBtn } from './styleComponents';
-import { getPostion } from './calcOffset';
+// import { getPostion } from './calcOffset';
 import '@/components/PostToc/markdownToc.css';
 
 interface Iprops {
@@ -8,8 +8,32 @@ interface Iprops {
   title: string;
 }
 
+interface IlistArray {
+  offset: number;
+  name: string;
+}
+
+const getNameOffsetList = (tag: 'h1' | 'h2' | 'h3') => {
+  const elementArray: IlistArray[] = [];
+
+  document.querySelectorAll(tag).forEach(element => {
+    elementArray.push({
+      offset: element.offsetTop,
+      name: element.innerText,
+    });
+  });
+  return elementArray;
+};
+
+export const getPostion = () => {
+  const elementArray = [...getNameOffsetList('h1'), ...getNameOffsetList('h2'), ...getNameOffsetList('h3')];
+  elementArray.sort((a, b) => a.offset - b.offset);
+
+  return elementArray;
+};
+
 export const PostToc = ({ html, title }: Iprops) => {
-  const getPostion_ = getPostion;
+  // const getPostion_ = getPostion; // hosting 시에만 문제가 되는듯 하다..?
   const elMarkdownToc = useRef<HTMLDivElement>(null);
   const elBtn = useRef<HTMLParagraphElement>(null);
   const elWrapper = useRef<HTMLDivElement>(null);
@@ -36,7 +60,7 @@ export const PostToc = ({ html, title }: Iprops) => {
     window.addEventListener('resize', updateSize);
     updateSize();
 
-    const elementArray = getPostion_();
+    const elementArray = getPostion();
 
     const updateOffsetY = () => {
       const aTagList = document.getElementsByClassName('markdown-toc')[0].getElementsByTagName('a');
