@@ -1,8 +1,7 @@
 import React from 'react';
 import Layout from '@/layouts/MainLayout';
-import { BoardCard } from '@/components/BoardCard';
+import * as Components from '@/components';
 import { getAllData } from '@/hooks/getAllData';
-import { Seo } from '@/components/SEO';
 import styled from 'styled-components';
 
 interface Iprops {
@@ -51,7 +50,7 @@ const Template = (props: Iprops) => {
         {result.map(data => {
           return (
             <BoardWrapper key={data.node.frontmatter.slug}>
-              <BoardCard node={data.node}></BoardCard>
+              <Components.BoardCard node={data.node}></Components.BoardCard>
             </BoardWrapper>
           );
         })}
@@ -65,10 +64,10 @@ export default Template;
 export const Head = (props: Iprops) => {
   return (
     <>
-      <Seo>
+      <Components.Seo>
         <title>{props.pageContext.target == '' ? 'Post: All' : 'Post: ' + props.pageContext.target}</title>
         <meta property="og:title" content={props.pageContext.target == '' ? 'Post: All' : 'Post: ' + props.pageContext.target} />
-      </Seo>
+      </Components.Seo>
     </>
   );
 };

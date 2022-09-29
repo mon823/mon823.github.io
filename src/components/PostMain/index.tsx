@@ -10,12 +10,10 @@ interface Iprops {
   html: string;
 }
 
-const PostMain = ({ html }: Iprops) => {
+export const PostMain = ({ html }: Iprops) => {
   return (
     <Wrapper>
       <div className="markdown-body" dangerouslySetInnerHTML={{ __html: html }} />
     </Wrapper>
   );
 };
-
-export { PostMain };
