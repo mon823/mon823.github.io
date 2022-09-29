@@ -1,6 +1,6 @@
 ---
 date: '2022-09-26T20:15:55'
-stage: PUBLISHED
+stage: CLOSED
 series: Gatsby & Typescript로 블로그 만들기
 category: Dev/blog/
 slug: create-blog-with-gatsby-typescript/Markdown-Toc/
