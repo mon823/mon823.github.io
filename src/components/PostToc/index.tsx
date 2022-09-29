@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Wrapper, HeaderWrapper, Word, Btn, UpScrollBtn } from './styleComponents';
-import { getPostion } from './calcOffset';
+// import { getPostion } from './calcOffset';
 import '@/components/PostToc/markdownToc.css';
 
 interface Iprops {
@@ -35,7 +35,7 @@ export const PostToc = ({ html, title }: Iprops) => {
     window.addEventListener('resize', updateSize);
     updateSize();
 
-    const elementArray = getPostion();
+    // const elementArray = getPostion();
 
     // const updateOffsetY = () => {
     //   const aTagList = document.getElementsByClassName('markdown-toc')[0].getElementsByTagName('a');
