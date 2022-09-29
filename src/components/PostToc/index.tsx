@@ -9,6 +9,7 @@ interface Iprops {
 }
 
 export const PostToc = ({ html, title }: Iprops) => {
+  const getPostion_ = getPostion;
   const elMarkdownToc = useRef<HTMLDivElement>(null);
   const elBtn = useRef<HTMLParagraphElement>(null);
   const elWrapper = useRef<HTMLDivElement>(null);
@@ -35,7 +36,7 @@ export const PostToc = ({ html, title }: Iprops) => {
     window.addEventListener('resize', updateSize);
     updateSize();
 
-    const elementArray = getPostion();
+    const elementArray = getPostion_();
 
     const updateOffsetY = () => {
       const aTagList = document.getElementsByClassName('markdown-toc')[0].getElementsByTagName('a');
