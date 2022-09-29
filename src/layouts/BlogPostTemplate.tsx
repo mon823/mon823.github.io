@@ -21,7 +21,7 @@ const Template = (props: IpostData) => {
       <Components.PostMain html={post.html} />
       <Components.PostTailBtn pageContext={pageContext} />
       <Components.Profile />
-      <Components.Utterances repo={repo} />
+      {/* <Components.Utterances repo={repo} /> */}
     </Layout>
   );
 };
