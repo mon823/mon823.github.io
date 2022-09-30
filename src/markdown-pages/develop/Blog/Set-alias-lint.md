@@ -8,7 +8,7 @@ title: Gatsby alias lint 설정하기
 tag: Gatsby Gatsbyjs Blog Typescript ESlint prettier styled-components
 ---
 
-저번에는 Gtasby 프로젝트를 생성하고 실행까지 해보았다. 이번에는 Alias 설정과 Lint 설정을 하고 Styled components 설정까지 마무리 할것이다.
+저번에는 Gatsby 프로젝트를 생성하고 실행까지 해보았다. 이번에는 Alias 설정과 Lint 설정을 하고 Styled components 설정까지 마무리 할것이다.
 
 <br/>
 
@@ -44,7 +44,7 @@ D:.
 \---static
 ```
 
-우선 Gatsby 를 사용하는 만큼 Gtatsby Plugin 을 다운받고 시작하도록 하자
+우선 Gatsby 를 사용하는 만큼 Gatsby Plugin 을 다운받고 시작하도록 하자
 
 ```bash
 $ npm install gatsby-plugin-alias-imports
