@@ -1,10 +1,11 @@
 import React from 'react';
 import Layout from '@/layouts/MainLayout';
 import * as Components from '@/components';
-import { getAllData } from '@/hooks/getAllData';
+import { getTargetData } from '@/hooks/getTargetData';
 import styled from 'styled-components';
 
 interface Iprops {
+  path: string;
   pageContext: {
     is: string;
     slug: string;
@@ -38,7 +39,7 @@ const Hr = styled.hr`
 `;
 
 const Template = (props: Iprops) => {
-  const result = getAllData(props.pageContext.target, props.pageContext.is);
+  const result = getTargetData(props.pageContext.target, props.pageContext.is);
   return (
     <Layout>
       <Wrapper>
@@ -54,6 +55,7 @@ const Template = (props: Iprops) => {
             </BoardWrapper>
           );
         })}
+        <Components.BoardToc slug={props.path} />
       </Wrapper>
     </Layout>
   );

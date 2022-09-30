@@ -3,14 +3,13 @@ import type { HeadProps } from 'gatsby';
 import '@styles/typography.css';
 import Layout from '@layouts/MainLayout';
 import { RouteComponentProps } from '@reach/router';
-import { getAllData } from '@/hooks/getAllData';
+import { getTargetData } from '@/hooks/getTargetData';
 import { BoardCard } from '@/components/BoardCard';
 import * as Components from '@/components';
-import { BloggerInfo } from '@/components/BloggerInfo';
 import { Seo } from '@/components/SEO';
 
 const IndexPage = (props: RouteComponentProps) => {
-  const result = getAllData('', 'category').splice(0, 5);
+  const result = getTargetData('', 'category').splice(0, 5);
 
   return (
     <Layout>
