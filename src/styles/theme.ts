@@ -9,6 +9,7 @@ export const colorLight = {
   lineColor: '#d2d4d9',
   boxColor: '#f1f3f5',
   commonColor: '#9fa7b1',
+  themeColor: '#278f7ac0',
 } as const;
 
 export const colorDark = {
@@ -17,6 +18,7 @@ export const colorDark = {
   lineColor: '#474748',
   boxColor: '#343a40',
   commonColor: '#9fa7b1',
+  themeColor: '#278f7ac0',
 } as const;
 
 const fontSize = {

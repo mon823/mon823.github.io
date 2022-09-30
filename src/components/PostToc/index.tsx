@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useRef, useState, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { getPostion } from './calcOffset';
 import '@/components/PostToc/markdownToc.css';
 
@@ -66,6 +66,7 @@ export const PostToc = ({ html, title }: Iprops) => {
   const elBtn = useRef<HTMLParagraphElement>(null);
   const elWrapper = useRef<HTMLDivElement>(null);
   const [isWide, setWide] = useState(true);
+  const theme = useContext(ThemeContext);
 
   useEffect(() => {
     if (elMarkdownToc.current && elBtn.current) {
@@ -99,10 +100,10 @@ export const PostToc = ({ html, title }: Iprops) => {
           }
         });
         elementArray.forEach((e, index) => {
-          aTagList[index].style.backgroundColor = 'transparent';
+          aTagList[index].style.color = 'inherit';
         });
         if (result != -1) {
-          aTagList[result].style.backgroundColor = '#2ae2052d';
+          aTagList[result].style.color = theme.color.themeColor;
         }
       }
     };
