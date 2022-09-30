@@ -34,6 +34,8 @@ const Current = styled.a`
 const Series = styled(Link)`
   all: unset;
   cursor: pointer;
+  display: block;
+  padding-bottom: 1px;
   &:hover {
     color: ${({ theme }) => theme.color.commonColor};
   }
