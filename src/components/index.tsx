@@ -1,5 +1,6 @@
 export { BloggerInfo } from '@/components/BloggerInfo';
 export { BoardCard } from '@/components/BoardCard';
+export { BoardToc } from '@/components/BoardToc';
 export { DarkMode } from '@/components/DarkModeBtn';
 export { Nav } from '@/components/Nav';
 export { PostHeader } from '@/components/PostHeader';

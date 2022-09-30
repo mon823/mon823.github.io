@@ -1,16 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-
-interface Inode {
-  frontmatter: {
-    title: string;
-    slug: string;
-    series: string | null;
-    tag: string | null;
-    category: string;
-    date: string;
-  };
-  excerpt: string;
-}
+import { Inode } from '@/types/dataType';
 
 interface Idata {
   allMarkdownRemark: {
@@ -20,7 +9,7 @@ interface Idata {
   };
 }
 
-export const getAllData = (target: string, targetName: string) => {
+export const getTargetData = (target: string, targetName: string) => {
   const data: Idata = useStaticQuery(graphql`
     query {
       allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { order: DESC, fields: [frontmatter___date] }) {

@@ -1,6 +1,8 @@
 .markdown-toc a {
   background-color: transparent;
   text-decoration: none;
+  display: block;
+  padding-bottom: 1px;
 }
 
 .markdown-toc a:link {
