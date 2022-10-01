@@ -47,6 +47,7 @@ const Template = (props: Iprops) => {
           {props.pageContext.is.toUpperCase()} : {props.pageContext.target == '' ? 'ALL' : props.pageContext.target}
         </Header>
         <NumPost>{result.length} post</NumPost>
+        <Components.BoardToc slug={props.path} />
         <Hr />
         {result.map(data => {
           return (
@@ -55,7 +56,6 @@ const Template = (props: Iprops) => {
             </BoardWrapper>
           );
         })}
-        <Components.BoardToc slug={props.path} />
       </Wrapper>
     </Layout>
   );
