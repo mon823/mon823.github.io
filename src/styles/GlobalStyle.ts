@@ -99,6 +99,16 @@ export const GlobalStyle = createGlobalStyle`
     color : ${({ theme }) => theme.color.textColor};
     width: 100%;
     height: 100%;
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+    }
   }
   .utterances {
     max-width: 100% !important;
