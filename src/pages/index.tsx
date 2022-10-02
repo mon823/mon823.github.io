@@ -8,7 +8,7 @@ import { BoardCard } from '@/components/BoardCard';
 import * as Components from '@/components';
 import { Seo } from '@/components/SEO';
 
-const IndexPage = (props: RouteComponentProps) => {
+const IndexPage = () => {
   const result = getTargetData('', 'category').splice(0, 5);
 
   return (
@@ -23,7 +23,7 @@ const IndexPage = (props: RouteComponentProps) => {
 
 export default IndexPage;
 
-export const Head = (props: HeadProps) => (
+export const Head = () => (
   <>
     <Seo>
       <title>Life Vending Machine</title>

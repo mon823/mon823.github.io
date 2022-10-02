@@ -51,6 +51,9 @@ const Btn = styled.p`
 
 const UpScrollBtn = styled.div`
   cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   margin-left: 7px;
   margin-top: 20px;
