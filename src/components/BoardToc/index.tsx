@@ -51,6 +51,10 @@ const Indent = styled.p<{ depth: number }>`
     text-decoration: underline;
     color: ${({ theme }) => theme.color.commonColor};
   }
+
+  @media screen and (max-width: 1520px) {
+    margin-left: 10px;
+  }
 `;
 
 const onClickToc = (depth: number, category: string) => {

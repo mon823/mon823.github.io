@@ -1,16 +1,6 @@
 @font-face {
   font-family: 'SourceHanSans';
   font-display: swap;
-  font-weight: 300;
-  font-style: normal;
-  src: local('SourceHanSansLight'), local('Source Han Sanas Light'), url('@styles/font/SourceHanSansKR/SourceHanSansKR-Light.woff2') format('woff2'),
-    url('@styles/font/SourceHanSansKR/SourceHanSansKR-Light.woff') format('woff'),
-    url('@styles/font/SourceHanSansKR/SourceHanSansKR-Light.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'SourceHanSans';
-  font-display: swap;
   font-weight: bold;
   font-style: normal;
   src: local('SourceHanSansBold'), local('Source Han Sanas Bold'), url('@styles/font/SourceHanSansKR/SourceHanSansKR-Bold.woff2') format('woff2'),
@@ -26,26 +16,6 @@
   src: local('SourceHanSansRegular'), local('Source Han Sanas Regular'), url('@styles/font/SourceHanSansKR/SourceHanSansKR-Regular.woff2') format('woff2'),
     url('@styles/font/SourceHanSansKR/SourceHanSansKR-Regular.woff') format('woff'),
     url('@styles/font/SourceHanSansKR/SourceHanSansKR-Regular.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'SourceHanSerif';
-  font-display: swap;
-  font-weight: 300;
-  font-style: normal;
-  src: local('SourceHanSerifLight'), local('Source Han Serif Light'), url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Light.woff2') format('woff2'),
-    url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Light.woff') format('woff'),
-    url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Light.otf') format('truetype');
-}
-
-@font-face {
-  font-family: 'SourceHanSerif';
-  font-display: swap;
-  font-weight: 600;
-  font-style: normal;
-  src: local('SourceHanSerifBold'), local('Source Han Serif Bold'), url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Bold.woff2') format('woff2'),
-    url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Bold.woff') format('woff'),
-    url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Bold.otf') format('truetype');
 }
 
 @font-face {
