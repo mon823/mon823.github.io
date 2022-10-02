@@ -109,7 +109,7 @@ export const BoardCard = ({ node }: { node: Inode }) => {
                 void navigate('/category/' + node.frontmatter.category);
               }}
             >
-              {node.frontmatter.category}
+              {node.frontmatter.category.slice(0, -1)}
             </Category>
           </Info>
         </Wrapper>
