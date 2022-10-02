@@ -107,7 +107,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: `G-J0D8NEK1MQ`,
+        trackingId: process.env.G_TRACKINGID,
         head: true,
       },
     },
