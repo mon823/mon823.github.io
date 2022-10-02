@@ -104,6 +104,13 @@ const config: GatsbyConfig = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `G-J0D8NEK1MQ`,
+        head: true,
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preload-fonts`,
