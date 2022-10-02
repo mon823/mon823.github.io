@@ -43,9 +43,7 @@ const Template = (props: Iprops) => {
   return (
     <Layout>
       <Wrapper>
-        <Header>
-          {props.pageContext.is.toUpperCase()} : {props.pageContext.target == '' ? 'ALL' : props.pageContext.target}
-        </Header>
+        <Header>{props.pageContext.target == '' ? 'ALL' : props.pageContext.target}</Header>
         <NumPost>{result.length} post</NumPost>
         <Components.BoardToc slug={props.path} />
         <Hr />

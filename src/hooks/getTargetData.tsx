@@ -37,7 +37,7 @@ export const getTargetData = (target: string, targetName: string) => {
       const categoryList = node.frontmatter.category.split('/');
       const result = new Array<Inode>();
       categoryList.reduce((acc: string, cur: string) => {
-        if (acc + '/' == target) {
+        if (acc == target) {
           result.push(node);
         }
         return acc + '/' + cur;

@@ -66,7 +66,7 @@ const createBoardPages = ({ actions, result }: { actions: Actions; result: IallM
               context: {
                 is: 'category',
                 slug: path,
-                target: accumulator,
+                target: accumulator.slice(0, -1),
               },
             });
           }
