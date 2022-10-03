@@ -155,7 +155,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '@styles/theme';
 
 
-const IndexPage = () => {
+const Layout = () => {
   return (
 	<ThemeProvider theme={theme}>
 		<GlobalStyle />
