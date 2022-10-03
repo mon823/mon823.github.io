@@ -31,10 +31,10 @@ const fontSize = {
 } as const;
 
 const fontWeight = {
-  thins: 200,
-  light: 300,
-  regular: 500,
-  semiBold: 600,
+  thins: '200',
+  light: '300',
+  regular: '500',
+  semiBold: '600',
   bold: 'bold',
 } as const;
 

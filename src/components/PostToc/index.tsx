@@ -104,9 +104,13 @@ export const PostToc = ({ html, title }: Iprops) => {
         });
         elementArray.forEach((e, index) => {
           aTagList[index].style.color = 'inherit';
+          aTagList[index].style.fontWeight = theme.fontWeight.regular;
+          aTagList[index].style.fontSize = theme.fontSize.sm;
         });
         if (result != -1) {
           aTagList[result].style.color = theme.color.themeColor;
+          aTagList[result].style.fontWeight = theme.fontWeight.bold;
+          aTagList[result].style.fontSize = theme.fontSize.md;
         }
       }
     };
