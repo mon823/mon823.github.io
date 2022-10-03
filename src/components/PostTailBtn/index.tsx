@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import { Iprops } from './types';
+
 const commanStyle = `
     width: 49%;
     padding: 20px;
@@ -13,6 +14,9 @@ const Wrapper = styled.div`
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const TailBtn = styled(Link)`
@@ -27,11 +31,21 @@ const TailBtn = styled(Link)`
       text-decoration: underline;
     }
   }
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-top: 10px;
+    transition: all 1s;
+  }
 `;
 
 const TailBtnNone = styled.div`
   ${commanStyle}
   border-color: ${({ theme }) => theme.color.boxColor};
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin-top: 10px;
+    transition: all 1s;
+  }
 `;
 
 const TailBtnDes = styled.span`

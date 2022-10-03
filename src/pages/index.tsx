@@ -1,8 +1,6 @@
 import React from 'react';
-import type { HeadProps } from 'gatsby';
 import '@styles/typography.css';
 import Layout from '@layouts/MainLayout';
-import { RouteComponentProps } from '@reach/router';
 import { getTargetData } from '@/hooks/getTargetData';
 import { BoardCard } from '@/components/BoardCard';
 import * as Components from '@/components';
