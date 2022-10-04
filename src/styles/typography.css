@@ -3,6 +3,7 @@
   font-display: swap;
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
   src: local('SourceHanSansBold'), local('Source Han Sanas Bold'), url('@styles/font/SourceHanSansKR/SourceHanSansKR-Bold.woff2') format('woff2'),
     url('@styles/font/SourceHanSansKR/SourceHanSansKR-Bold.woff') format('woff'),
     url('@styles/font/SourceHanSansKR/SourceHanSansKR-Bold.otf') format('truetype');
@@ -13,6 +14,7 @@
   font-display: swap;
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
   src: local('SourceHanSansRegular'), local('Source Han Sanas Regular'), url('@styles/font/SourceHanSansKR/SourceHanSansKR-Regular.woff2') format('woff2'),
     url('@styles/font/SourceHanSansKR/SourceHanSansKR-Regular.woff') format('woff'),
     url('@styles/font/SourceHanSansKR/SourceHanSansKR-Regular.otf') format('truetype');
@@ -23,6 +25,7 @@
   font-display: swap;
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
   src: local('SourceHanSerifHeavy'), local('Source Han Serif Heavy'), url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Heavy.woff2') format('woff2'),
     url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Heavy.woff') format('woff'),
     url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Heavy.otf') format('truetype');
@@ -33,6 +36,7 @@
   font-display: swap;
   font-weight: 500;
   font-style: normal;
+  font-display: fallback;
   src: local('SourceHanSerifRegular'), local('Source Han Serif Regular'), url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Regular.woff2') format('woff2'),
     url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Regular.woff') format('woff'),
     url('@styles/font/SourceHanSerifKR/SourceHanSerifKR-Regular.otf') format('truetype');
