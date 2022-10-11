@@ -1,21 +1,14 @@
 import React from 'react';
 import '@styles/typography.css';
 import Layout from '@layouts/MainLayout';
-import { getTargetData } from '@/hooks/getTargetData';
-import { BoardCard } from '@/components/BoardCard';
 import * as Components from '@/components';
 import { Seo } from '@/components/SEO';
 
 const IndexPage = () => {
-  const result = getTargetData('', 'category').splice(0, 5);
-
   return (
     <Layout>
       <Components.BloggerInfo></Components.BloggerInfo>
-      Latest
-      {result.map(data => {
-        return <BoardCard key={data.node.frontmatter.slug} node={data.node}></BoardCard>;
-      })}
+      <Components.About></Components.About>
     </Layout>
   );
 };
