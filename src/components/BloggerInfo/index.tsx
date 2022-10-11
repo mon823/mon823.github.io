@@ -66,7 +66,6 @@ export const BloggerInfo = () => {
           />
         </SocialLink>
       </WordWrapper>
-      Latest
     </Wrapper>
   );
 };

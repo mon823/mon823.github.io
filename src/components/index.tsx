@@ -12,3 +12,4 @@ export { SeriesMain } from '@/components/SeriesMain';
 export { SeriesSection } from '@/components/SeriesSection';
 export { SplitTag } from '@/components/Tag';
 export { Utterances } from '@/components/Utterances';
+export { About } from '@/components/About';

@@ -578,6 +578,9 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.fileAbsolutePath'
   | 'childMarkdownRemark.frontmatter.category'
   | 'childMarkdownRemark.frontmatter.date'
+  | 'childMarkdownRemark.frontmatter.demo'
+  | 'childMarkdownRemark.frontmatter.github'
+  | 'childMarkdownRemark.frontmatter.post'
   | 'childMarkdownRemark.frontmatter.series'
   | 'childMarkdownRemark.frontmatter.slug'
   | 'childMarkdownRemark.frontmatter.stage'
@@ -643,6 +646,9 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.fileAbsolutePath'
   | 'childrenMarkdownRemark.frontmatter.category'
   | 'childrenMarkdownRemark.frontmatter.date'
+  | 'childrenMarkdownRemark.frontmatter.demo'
+  | 'childrenMarkdownRemark.frontmatter.github'
+  | 'childrenMarkdownRemark.frontmatter.post'
   | 'childrenMarkdownRemark.frontmatter.series'
   | 'childrenMarkdownRemark.frontmatter.slug'
   | 'childrenMarkdownRemark.frontmatter.stage'
@@ -1111,6 +1117,9 @@ type MarkdownRemarkFieldsEnum =
   | 'fileAbsolutePath'
   | 'frontmatter.category'
   | 'frontmatter.date'
+  | 'frontmatter.demo'
+  | 'frontmatter.github'
+  | 'frontmatter.post'
   | 'frontmatter.series'
   | 'frontmatter.slug'
   | 'frontmatter.stage'
@@ -1205,6 +1214,9 @@ type MarkdownRemarkFilterListInput = {
 type MarkdownRemarkFrontmatter = {
   readonly category: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
+  readonly demo: Maybe<Scalars['String']>;
+  readonly github: Maybe<Scalars['String']>;
+  readonly post: Maybe<Scalars['String']>;
   readonly series: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
   readonly stage: Maybe<Scalars['String']>;
@@ -1223,6 +1235,9 @@ type MarkdownRemarkFrontmatter_dateArgs = {
 type MarkdownRemarkFrontmatterFilterInput = {
   readonly category: InputMaybe<StringQueryOperatorInput>;
   readonly date: InputMaybe<DateQueryOperatorInput>;
+  readonly demo: InputMaybe<StringQueryOperatorInput>;
+  readonly github: InputMaybe<StringQueryOperatorInput>;
+  readonly post: InputMaybe<StringQueryOperatorInput>;
   readonly series: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
   readonly stage: InputMaybe<StringQueryOperatorInput>;

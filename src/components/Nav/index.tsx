@@ -67,7 +67,13 @@ const Nav = () => {
         }}
       ></div>
       <NavMenuBox>
-        <NavMenu>about </NavMenu>
+        <NavMenu
+          onClick={() => {
+            void navigate('/about');
+          }}
+        >
+          about
+        </NavMenu>
         <NavMenu
           onClick={() => {
             void navigate('/category/');
