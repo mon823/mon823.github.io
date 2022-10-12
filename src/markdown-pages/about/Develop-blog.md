@@ -1,5 +1,6 @@
 ---
 date: '2022-09-01T16:34:10'
+rank: 3
 stage: ABOUT
 title: 개발 블로그 개발
 tag: Gatsby Typescript React

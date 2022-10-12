@@ -1,5 +1,6 @@
 ---
 date: '2021-11-01T16:34:10'
+rank: 4
 stage: ABOUT
 title: 저기어때?!
 tag: kobigbird DAPT streamlit
