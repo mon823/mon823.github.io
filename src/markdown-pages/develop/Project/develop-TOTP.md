@@ -10,7 +10,7 @@ tag: React ES6 Express SASS Typescript redis webpack babel
 
 
 
-![](assets/TOTP/20221011234103575.png)
+![](assets/develop-TOTP/20221011234103575.png)
 
 
 안녕하세요, 팀 TOTP가 뭐조에서 개발한 **DaDaIkSeon**을 개발 과정을 이야기 해보겠습니다.

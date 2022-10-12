@@ -4,7 +4,7 @@ rank: 2
 stage: ABOUT
 title: N2T
 tag: React ES6 Express
-post: 
+post: /post/develop-N2T/
 github: https://github.com/sigma-crow/n2t
 demo: 
 ---
