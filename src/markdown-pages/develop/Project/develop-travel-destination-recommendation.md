@@ -5,7 +5,7 @@ series: null
 category: Dev/Project/
 slug: develop-travel-destination-recommendation/
 title: 저기어때!
-tag: kobigbird, DAPT, Streamlit
+tag: kobigbird DAPT Streamlit
 ---
 
 ![](https://camo.githubusercontent.com/f6244caacdd3e6260a909dfcf0aac23dc41185a34ca034260f34fb3d55e95a2a/68747470733a2f2f692e696d6775722e636f6d2f313069386572622e706e67)
