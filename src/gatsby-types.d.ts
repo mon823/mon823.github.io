@@ -581,6 +581,7 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.frontmatter.demo'
   | 'childMarkdownRemark.frontmatter.github'
   | 'childMarkdownRemark.frontmatter.post'
+  | 'childMarkdownRemark.frontmatter.rank'
   | 'childMarkdownRemark.frontmatter.series'
   | 'childMarkdownRemark.frontmatter.slug'
   | 'childMarkdownRemark.frontmatter.stage'
@@ -649,6 +650,7 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.frontmatter.demo'
   | 'childrenMarkdownRemark.frontmatter.github'
   | 'childrenMarkdownRemark.frontmatter.post'
+  | 'childrenMarkdownRemark.frontmatter.rank'
   | 'childrenMarkdownRemark.frontmatter.series'
   | 'childrenMarkdownRemark.frontmatter.slug'
   | 'childrenMarkdownRemark.frontmatter.stage'
@@ -1120,6 +1122,7 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.demo'
   | 'frontmatter.github'
   | 'frontmatter.post'
+  | 'frontmatter.rank'
   | 'frontmatter.series'
   | 'frontmatter.slug'
   | 'frontmatter.stage'
@@ -1217,6 +1220,7 @@ type MarkdownRemarkFrontmatter = {
   readonly demo: Maybe<Scalars['String']>;
   readonly github: Maybe<Scalars['String']>;
   readonly post: Maybe<Scalars['String']>;
+  readonly rank: Maybe<Scalars['Int']>;
   readonly series: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
   readonly stage: Maybe<Scalars['String']>;
@@ -1238,6 +1242,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly demo: InputMaybe<StringQueryOperatorInput>;
   readonly github: InputMaybe<StringQueryOperatorInput>;
   readonly post: InputMaybe<StringQueryOperatorInput>;
+  readonly rank: InputMaybe<IntQueryOperatorInput>;
   readonly series: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
   readonly stage: InputMaybe<StringQueryOperatorInput>;
