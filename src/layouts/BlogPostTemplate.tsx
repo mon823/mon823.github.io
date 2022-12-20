@@ -69,6 +69,7 @@ export const Head = (props: IpostData) => {
         <meta name="description" content={post.excerpt} />
         <meta name="og:description" content={post.excerpt} />
         <meta name="keywords" content={post.frontmatter.tag ? post.frontmatter.tag : undefined} />
+        <meta property="og:url" content={`https://mon823.github.io/post/${post.frontmatter.slug}`} />
       </Components.Seo>
     </>
   );
