@@ -77,7 +77,7 @@ export const BoardToc = ({ slug }: { slug: string }) => {
         }
         return (
           <Indent key={data.category} depth={data.depth} onClick={() => onClickToc(data.depth, data.category)} style={style}>
-            {data.category == '' ? 'All' : data.category}
+            {data.category == '' ? 'All' : data.category} ({data.calcCategory})
           </Indent>
         );
       })}

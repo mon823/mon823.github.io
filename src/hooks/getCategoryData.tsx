@@ -30,10 +30,20 @@ export const getCategoryData = () => {
     }
   `);
   const categorySet = new Set<string>();
+  const calcCategory = new Map<string, number>();
+  let allCount = 0;
   data.allMarkdownRemark.edges.forEach(({ node }) => {
+    allCount++;
     const categoryList = node.frontmatter.category.split('/');
     categoryList.reduce((acc: string, cur: string) => {
       categorySet.add(acc);
+      if (calcCategory.has(acc)) {
+        const count = calcCategory.get(acc);
+        calcCategory.delete(acc);
+        calcCategory.set(acc, count ? count + 1 : 0);
+      } else {
+        calcCategory.set(acc, 1);
+      }
       return acc + '/' + cur;
     });
   });
@@ -42,11 +52,15 @@ export const getCategoryData = () => {
     return {
       depth: node.split('/').length,
       category: node,
+      calcCategory: calcCategory.get(node),
     };
   });
   const home = {
     depth: 0,
     category: '',
+    calcCategory: allCount,
   };
+  console.log(result);
+  console.log(calcCategory);
   return [home, ...result];
 };
