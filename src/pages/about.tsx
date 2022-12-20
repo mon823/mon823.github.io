@@ -22,6 +22,7 @@ export const Head = () => (
       <meta name="description" content="개발 일지 블로그" />
       <meta name="og:description" content="개발 일지 블로그" />
       <meta property="og:title" content="Life Vending Machine" />
+      <meta property="og:url" content="https://mon823.github.io/about" />
     </Seo>
   </>
 );

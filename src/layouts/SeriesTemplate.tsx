@@ -27,6 +27,7 @@ export const pageQuery = graphql`
         series
         category
         tag
+        slug
       }
     }
   }
@@ -42,6 +43,7 @@ export const Head = (props: IpostData) => {
       <Components.Seo>
         <title>{seriesTitle}</title>
         <meta property="og:title" content={seriesTitle} />
+        <meta property="og:url" content={`https://mon823.github.io/post/${post.frontmatter.slug.split('/')[0]}/`} />
       </Components.Seo>
     </>
   );
