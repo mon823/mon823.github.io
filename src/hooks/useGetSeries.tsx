@@ -19,7 +19,7 @@ interface Idata {
 export const useGetSeries = (series: string) => {
   const data: Idata = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { order: ASC, fields: [frontmatter___date] }) {
+      allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { frontmatter: { date: ASC } }) {
         edges {
           node {
             frontmatter {
