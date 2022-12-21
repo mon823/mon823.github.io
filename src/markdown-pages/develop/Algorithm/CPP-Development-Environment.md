@@ -231,4 +231,76 @@ tag: C++ Mingw debug VSCode
 - `g++` or `gcc` 선택
   - 오류 발생시 참조 문서 확인
 
+2022/12/20 추가
+
+- launch.json 추가하기 (디버그 설정)
+
+```json
+// launch.json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++.exe - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [], // ["<","input.txt"] input 은 txt로 받기 위한  args 필요시 변경
+            "stopAtEntry": false,
+            "cwd": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin", 
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+              {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+              },
+              {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+              }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file"
+          }
+    ]
+}
+```
+
+- input.txt 로 입력값을 받고 싶다면 args 에 `["<","input.txt"]` 추가하기
+
+## 9. Formatting 설정
+
+- Format On Save 체크하기
+
+![](assets/CPP-Development-Environment/20221221125025240.png)
+
+
+
+- setting 추가
+
+```json
+// setting.json
+{
+  "files.associations": {
+    "ostream": "cpp"
+  },
+  "editor.defaultFormatter": "ms-vscode.cpptools-extension-pack",
+  "C_Cpp.clang_format_style": "{ IndentWidth: 4, ColumnLimit: 80 }",
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "editor.tabSize": 4,
+  "C_Cpp.autocompleteAddParentheses": false,
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "editor.formatOnSave": true
+}
+```
+
 <br/>
