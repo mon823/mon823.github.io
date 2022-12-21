@@ -105,16 +105,16 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.G_TRACKINGID,
-        head: true,
+        trackingIds: [process.env.G_TRACKINGID],
       },
     },
+
     `gatsby-plugin-offline`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-preload-fonts`,
-    `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-sitemap`,
   ],
 };
 
