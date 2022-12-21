@@ -12,7 +12,7 @@ interface Idata {
 export const getTargetData = (target: string, targetName: string) => {
   const data: Idata = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMarkdownRemark(filter: { frontmatter: { stage: { eq: "PUBLISHED" } } }, sort: { frontmatter: { date: DESC } }) {
         edges {
           node {
             frontmatter {

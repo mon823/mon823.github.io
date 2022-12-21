@@ -67,7 +67,7 @@ export const Head = (props: Iprops) => {
       <Components.Seo>
         <title>{props.pageContext.target == '' ? 'Post: All' : 'Post: ' + props.pageContext.target}</title>
         <meta property="og:title" content={props.pageContext.target == '' ? 'Post: All' : 'Post: ' + props.pageContext.target} />
-        <meta property="og:url" content={`https://mon823.github.io/category/${props.pageContext.target}/`} />
+        <meta property="og:url" content={`https://mon823.github.io/${props.pageContext.is}/${props.pageContext.target}/`} />
       </Components.Seo>
     </>
   );
