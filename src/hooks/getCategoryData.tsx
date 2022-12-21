@@ -60,7 +60,5 @@ export const getCategoryData = () => {
     category: '',
     calcCategory: allCount,
   };
-  console.log(result);
-  console.log(calcCategory);
   return [home, ...result];
 };
