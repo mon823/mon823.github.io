@@ -3,8 +3,7 @@
 # To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
 #
 name: Deploy Gatsby site to Pages
-env: 
-  G_TRACKINGID: ${{ env.G_TRACKINGID }}
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -28,6 +27,9 @@ concurrency:
 defaults:
   run:
     shell: bash
+
+env: 
+  G_TRACKINGID: ${{ env.G_TRACKINGID }}
 
 jobs:
   # Build job
