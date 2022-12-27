@@ -12,7 +12,13 @@ const IndexPage = () => {
   return (
     <Layout>
       <Components.BloggerInfo></Components.BloggerInfo>
-      Latest
+      <div style={{ display: 'flex' }}>
+        Latest
+        <a style={{ marginLeft: 'auto' }} href="/category/">
+          전체 글 보러가기
+        </a>
+      </div>
+
       {result.map(data => {
         return <BoardCard key={data.node.frontmatter.slug} node={data.node}></BoardCard>;
       })}
