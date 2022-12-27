@@ -3,7 +3,7 @@
 # To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
 #
 name: Deploy Gatsby site to Pages
-env: G_TRACKINGID: ${{ env.G_TRACKINGID }}
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -27,6 +27,7 @@ concurrency:
 defaults:
   run:
     shell: bash
+
 
 jobs:
   # Build job
@@ -53,7 +54,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '17'
+          node-version: '18'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         id: pages
@@ -72,6 +73,12 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
+      - name: Generate Environment Variables File
+        run: |
+          echo "G_TRACKINGID=$G_TRACKINGID">> .env
+        env:
+          G_TRACKINGID: ${{env.G_TRACKINGID}}
+
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Gatsby
