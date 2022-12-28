@@ -93,7 +93,7 @@ export const BoardCard = ({ node }: { node: Inode }) => {
             <Series
               onClick={e => {
                 e.stopPropagation();
-                void navigate('/post/' + seriesSlug);
+                void navigate('/series/' + seriesSlug);
               }}
             >
               {node.frontmatter.series}
