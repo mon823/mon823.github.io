@@ -46,7 +46,7 @@ export const SeriesSection = ({ series, title, slug }: { series: string; title: 
   const seriesSlug = slug.split('/')[0];
   return (
     <Wrapper>
-      <SeriesHeader to={'/post/' + seriesSlug}>
+      <SeriesHeader to={'/series/' + seriesSlug}>
         SERIES: {series} <SeriesHeaderCount>({data.length})</SeriesHeaderCount>
       </SeriesHeader>
       <br />
