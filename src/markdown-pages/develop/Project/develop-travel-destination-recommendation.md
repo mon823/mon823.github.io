@@ -8,96 +8,131 @@ title: 저기어때!
 tag: kobigbird DAPT Streamlit
 ---
 
-![](https://camo.githubusercontent.com/f6244caacdd3e6260a909dfcf0aac23dc41185a34ca034260f34fb3d55e95a2a/68747470733a2f2f692e696d6775722e636f6d2f313069386572622e706e67)
+![](https://camo.githubusercontent.com/9c6fca774b473f7892957198d72101d75bb8ea6effc0e719a7b24a043f70085e/68747470733a2f2f692e696d6775722e636f6d2f313069386572622e706e67)
 
-안녕하세요, 팀 AI-ESG에서 개발한 **저기어때**의 개발 과정을 이야기를 해보겠습니다.
-
-저희 팀은 Naver BoostCamp AI Tech 2기에서 만난 팀으로 총 7명으로 구성되어 있습니다.
+# [Github 바로가기](https://github.com/boostcampaitech2/final-project-level3-nlp-11)
 
 <br/>
 
 # 저기어때!
 
-저기어때는 사용자가 원하는 장소를 묘사하면 특정 관광지 또는 유사한 다른 장소를 추천해주는 서비스이다.
+**저기어때**는 Naver BoostCamp AI Tech 2기 최종 프로젝트로, 7명의 개발자가 협업한 팀 프로젝트입니다.  
+사용자가 원하는 장소를 묘사하면 **특정 관광지 또는 유사한 장소를 추천**해주는 서비스를 목표로 구현하였습니다.
+
+자세한 내용은 [GitHub](https://github.com/boostcampaitech2/final-project-level3-nlp-11) 및 [개발 문서](https://github.com/boostcampaitech2/final-project-level3-nlp-11/wiki/실험일지)에서 확인할 수 있습니다.
 
 <br/>
 
-# Develop
-
-저희 웹에서 제공하는 서비스는 다음과 같습니다.
-
-- 검색
-	- 문장으로 묘사하는 검색 제공
-	- 세부정보 제공
-		- naver place의 정보 및 링크 제공
-	- 결과에 대한 반응 수집
+---
 
 <br/>
 
-**Service Flow**
-![](assets/develop-travel-destination-recommendation/20221012171614708.png)
+## 개발 배경
+
+때로는 상상하는 여행지를 찾는 일이 쉽지 않습니다.  
+대부분의 여행자는 검색을 통해 여러 장소를 확인하고, 자신이 원하는 곳과 비교하는 방식으로 여행지를 찾습니다.  
+이 과정에서 **많은 시간과 노력이 필요**하기 때문에, 보다 직관적인 방식이 필요하다고 생각했습니다.
+
+이에 따라 사용자가 **여행지를 문자로 묘사하면, 그에 맞는 장소를 추천**하는 기능을 구현하기로 하였습니다.
 
 <br/>
 
-**명소 검색**
-
-![](assets/develop-travel-destination-recommendation/20221012171702884.png)
+---
 
 <br/>
 
+## 개발 목표
 
-**유사 명소 검색**
-![](assets/develop-travel-destination-recommendation/20221012171803834.png)
-
-<br/>
-
-## WEB
-
-간단하게 프로토타이핑 도구를 통해 WEB을 구성하고 이를 통해 서비스를 보여줄 수 있는 공간으로 **streamlit**을 활용 하였다.
-
-python으로 간단하게 빌드 할 수 있다는 장점이 있다.
-
-lode balancing을 하기위해 nginx의 기능을 활용하였다.
+사용자가 입력한 묘사를 기반으로 **관광지 또는 여행지를 추천**하는 서비스 구현
 
 <br/>
 
-## ML/DL
-
-### 데이터 수집
-
-먼저 관광지의 데이터를 가져오기 위해서 아래 3가지 데이터를 활용하였다.
-
-- 한국관광공사 공식 Open API
-- 네이버 Place 데이터
-- Google Place 데이터
-
-우선 한국관광공사 Open API의 데이터를  통해서 한국에 있는 관광지 이름을 구하는 것을 먼저 진행하였다.
-
-해당 관광지 리스트를 통해서 네이버 Place와 Goole Place의 사용자 리뷰 데이터를 먼저 취합하였다. 사용자 리뷰 데이터를 수집하여 사용자가 해당 장소에 대한 묘사부터 감정, 서비스까지 확인할 수 있다고 생각하였다.
+---
 
 <br/>
 
-### 모델 선택 및 최적화
-[실험 문서 보러가기](https://github.com/boostcampaitech2/final-project-level3-nlp-11/wiki/%EC%8B%A4%ED%97%98%EC%9D%BC%EC%A7%80)
+## 핵심 기능
 
-![](https://camo.githubusercontent.com/b5e4a33ee0872a86ea4c4e9bf14f8fae06d45dcbe56a67db2af1095c689fc563/68747470733a2f2f692e696d6775722e636f6d2f754a4e4f6d5a7a2e706e67)
+### **서비스 흐름**
 
-
-<br/>
-
-# 느낀 점
-
-ML/DL 모델을 서빙하는 방식에 대해서 정말정말 간단하게만 진행해보았다. 또한 ML/DL에 대해 어떻게 모델을 최적화하고 해당 모델을 이용해야 하는지에 대해 경험을 했다는 점이 좋았다.
-
-물론 아직도 나에게 어려운 점이 너무 많다. 우선 데이터를 수집하는 것 그리고 모델을 선택하고 최적화하기 위한 수 많은 지식이 필요했다는 점이 크다. 해당 모델의 성능을 올리기 위해 해볼 수 있는 것도 정말 다양하고 많다는 것이 더욱 공부를 진행해야 하는 이유로 느껴졌다.
-
-아직도 모델을 훈련하고 이용하는 게 어렵게 느껴지지만 이러한 경험이 분명 도움이 되리라 믿는다.
-
-
+![Service Flow](assets/develop-travel-destination-recommendation/20221012171614708.png)
 
 <br/>
 
-# 부록
+### **명소 검색**
 
-![](https://camo.githubusercontent.com/d4509d6543cd1ed42a103f3ea867d3fd23072f98f21fd899a80ffdaba3822b83/68747470733a2f2f692e696d6775722e636f6d2f634f416e6437632e706e67)
-![](https://camo.githubusercontent.com/0fc6ddf302c8fe3dcb73add7d7db74970284bd54a47e06e55a5031eac8d928d1/68747470733a2f2f692e696d6775722e636f6d2f334a66434a68792e706e67)
+![명소 검색](assets/develop-travel-destination-recommendation/20221012171702884.png)
+
+<br/>
+
+### **유사 명소 검색**
+
+![유사 명소 검색](assets/develop-travel-destination-recommendation/20221012171803834.png)
+
+<br/>
+
+---
+
+<br/>
+
+## 내가 맡은 역할
+
+<br/>
+
+### **FE(Front-End)**
+
+서비스를 사용자에게 보여주기 위해 **Python 기반의 Streamlit**을 활용하여 빠르게 View를 구성하였습니다.
+
+<br/>
+
+### **ML/DL**
+
+<br/>
+
+#### **데이터 수집**
+
+관광지 데이터를 확보하기 위해 **4가지 데이터 소스**를 활용하였습니다.
+
+1. **한국관광공사 Open API**
+2. **네이버 Place 데이터**
+3. **네이버 Place 연계 블로그 데이터**
+4. **Google Place 데이터**
+
+이 중 저는 **네이버 Place 데이터** 및 **네이버 Place 연계 블로그 데이터** 수집을 담당하였습니다.
+
+<br/>
+
+#### **모델 선택 및 최적화**
+
+모델 성능 향상을 위해 **DAPT** 등의 추가 기법을 적용하여 최적화를 진행하였습니다.  
+데이터 전처리부터 모델 최적화까지의 다양한 시도는 [실험 문서](https://github.com/boostcampaitech2/final-project-level3-nlp-11/wiki/%EC%8B%A4%ED%97%98%EC%9D%BC%EC%A7%80)에 기록되어 있습니다.
+
+<br/>
+
+---
+
+<br/>
+
+## 얻은 경험
+
+### **데이터의 중요성**
+
+프로젝트를 진행하면서 가장 중요하다고 느낀 부분은 **데이터의 확보와 정제**였습니다.  
+우리가 가진 데이터에는 **정답이 없었기 때문에**, 이를 해결하기 위한 노력이 필요했습니다.
+
+<br/>
+
+### **도메인 이해의 필요성**
+
+관광지 추천이라는 도메인에 대한 **이해도에 따라 결과가 달라질 수 있음**을 깨달았습니다.  
+데이터를 바라보는 **관점**에 따라 모델 성능이 달라졌으며,  
+이를 고려한 접근이 성능 개선에 중요한 역할을 했습니다.
+
+<br/>
+
+### **모델 최적화와 평가의 어려움**
+
+모델을 최적화하고 평가하는 과정은 예상보다 더 **시간과의 싸움**이었습니다.  
+다양한 모델을 구성하고 최적화하는 경험을 쌓았지만,  
+여전히 **성능을 보장하는 모델을 자신 있게 구성하기란 쉽지 않음**을 실감했습니다.  
+그럼에도 불구하고, **모델 개발 프로세스를 익히고 실무에서 적용할 수 있다는 점**에서 큰 성취감을 느꼈습니다.

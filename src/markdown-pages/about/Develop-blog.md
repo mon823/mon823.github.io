@@ -1,16 +1,16 @@
 ---
 date: '2022-09-01T16:34:10'
-rank: 3
+rank: 2
 stage: ABOUT
 title: 개발 블로그 개발
 tag: Gatsby Typescript React
-post: /post/create-blog-with-gatsby-typescript/Make-Blog-By-Gatsby/
+post: /post/develop-blog/
 github: https://github.com/mon823/mon823.github.io
 demo: https://mon823.github.io/
 ---
 
 ![](assets/Develop-blog/20221011111659761.png)
 
-개발 관련 일지 또는 기록을 남기는 공간을 생각하던 중 블로그를 생각하였는데 개발자로서 직접 구성한 블로그가 필요하다고 느끼게 되어 개인프로젝트로 만들기 시작하였다.
+지금 보고 계신 블로그를 직접 구현하였습니다. React Base 프로젝트이며 블로그 특성을 고려해 Gatsby 를 사용해 SSG 방식을 이용하였습니다.
 
 개발 기간 (2022.09 - 2022.10)
