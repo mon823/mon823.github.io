@@ -21,5 +21,5 @@ tag: Next-js ES6 React
 ## 서비스 영상
 
 <video width="100%" height="auto" controls>
-  <source src="https://github.com/mon823/mon823.github.io/blob/master/src/markdown-pages/develop/Project/assets/develop-haneum/1.mp4?raw=true" type="video/mp4">
+  <source src="https://github.com/mon823/mon823.github.io/blob/master/src/markdown-pages/develop/Project/assets/develop-haneum/1.MP4?raw=true" type="video/mp4">
 </video>
